@@ -51,9 +51,7 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 
 ## Background
 
-```text
-Background information and links to relevant terms
-```
+A Smart Machine Base (SMB) was developed by Demcon, consisting of a generic machine platform with standardized controls. Part of the project was the development of an IoT agent which is able to listen to the machine on its south port and present some OEE and sensor data to the FIWARE Context Broker. This information can then in turn be used for MES, remote diagnosis etc.
 
 ## Install
 
@@ -73,18 +71,12 @@ A `Dockerfile` is also available for your use - further information can be found
 How to use the component
 
 Information about how to use the <Name of component> can be found in the [User & Programmers Manual](docs/usermanual.md).
-
-The following features are listed as [deprecated](docs/deprecated.md).
 ```
 
 ## API
 
-```text
-Definition of the API interface:
+Information about the API of the <Name of component> can be found in the [API documentation](docs/api.md).
 
-Information about the API of  the <Name of component> can be found in the [API documentation](docs/api.md).
-
-```
 
 ## Testing
 
