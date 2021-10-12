@@ -23,7 +23,7 @@ Once docker has been correctly installed you can continue with the other steps
 
 ## Step 1
 
-First of all, you have to setup and configure the server. This is explained in the [installationguid](installationguide.md).
+First of all, you have to setup and configure the server. This is explained in the [installation guide](installationguide.md).
 
 ## Step 2
 
