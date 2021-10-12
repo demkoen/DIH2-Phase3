@@ -6,6 +6,7 @@
 - [Step 1](#step1)
 - [Step 2](#step2)
 - [Step 3](#step3)
+- [Step 4](#step4)
 
 [Top](#top)
 
@@ -23,13 +24,17 @@ Once docker has been correctly installed you can continue with the other steps
 
 ## Step 1
 
-First of all, you have to setup and configure the server. This is explained in the [installation guide](installationguide.md).
+First of all, prepare your machine for running the docker containers. This is explained in the [docker readme](../docker/README.md) file in the docker folder.
 
 ## Step 2
 
-After installing and configuring the server and all docker containers are up and running, you can start to send messages to the server via MQTT. How the messages should be presented is explained in the [api description](api.md).
+In the next step, you have to setup and configure the server. This is explained in the [installation guide](installationguide.md).
 
 ## Step 3
+
+After installing and configuring the server and all docker containers are up and running, you can start to send messages to the server via MQTT. How the messages should be presented is explained in the [api description](api.md).
+
+## Step 4
 
 To debug and configure your setup, a bunch of tools and tips are explained in the [user manual](usermanual.md).
 
