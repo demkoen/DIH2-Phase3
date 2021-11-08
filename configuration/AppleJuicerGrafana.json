@@ -1,0 +1,881 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Demcon Demo",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 28,
+      "panels": [],
+      "title": "PackML States",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "fillOpacity": 70,
+            "lineWidth": 0
+          },
+          "mappings": [
+            {
+              "options": {
+                "Execute": {
+                  "color": "dark-green",
+                  "index": 3
+                },
+                "Idle": {
+                  "color": "dark-blue",
+                  "index": 2
+                },
+                "Resetting": {
+                  "color": "dark-purple",
+                  "index": 1
+                },
+                "Starting": {
+                  "color": "light-green",
+                  "index": 4
+                },
+                "Stopped": {
+                  "color": "red",
+                  "index": 0
+                },
+                "Stopping": {
+                  "color": "dark-orange",
+                  "index": 5
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 19,
+        "x": 5,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "alignValue": "left",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "mergeValues": true,
+        "rowHeight": 0.9,
+        "showValue": "always",
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"PackML State\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell'\nORDER BY 1",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "title": "Production Cell",
+      "type": "state-timeline"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "fillOpacity": 70,
+            "lineWidth": 0
+          },
+          "mappings": [
+            {
+              "options": {
+                "Execute": {
+                  "color": "dark-green",
+                  "index": 3
+                },
+                "Idle": {
+                  "color": "dark-blue",
+                  "index": 2
+                },
+                "Resetting": {
+                  "color": "dark-purple",
+                  "index": 1
+                },
+                "Starting": {
+                  "color": "light-green",
+                  "index": 4
+                },
+                "Stopped": {
+                  "color": "red",
+                  "index": 0
+                },
+                "Stopping": {
+                  "color": "dark-orange",
+                  "index": 5
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 5,
+      "options": {
+        "alignValue": "left",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "mergeValues": true,
+        "rowHeight": 0.9,
+        "showValue": "never",
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer'\nORDER BY 1",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder'\nORDER BY 1",
+          "refId": "B",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder'\nORDER BY 1",
+          "refId": "C",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank'\nORDER BY 1",
+          "refId": "D",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank'\nORDER BY 1",
+          "refId": "E",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line'\nORDER BY 1",
+          "refId": "F",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump'\nORDER BY 1",
+          "refId": "G",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve'\nORDER BY 1",
+          "refId": "H",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump'\nORDER BY 1",
+          "refId": "I",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve'\nORDER BY 1",
+          "refId": "J",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator'\nORDER BY 1",
+          "refId": "K",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler'\nORDER BY 1",
+          "refId": "L",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve'\nORDER BY 1",
+          "refId": "M",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank'\nORDER BY 1",
+          "refId": "N",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank'\nORDER BY 1",
+          "refId": "O",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line'\nORDER BY 1",
+          "refId": "P",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump'\nORDER BY 1",
+          "refId": "Q",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve'\nORDER BY 1",
+          "refId": "R",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator'\nORDER BY 1",
+          "refId": "S",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler'\nORDER BY 1",
+          "refId": "T",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve'\nORDER BY 1",
+          "refId": "U",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "title": "PackML states",
+      "type": "state-timeline"
+    },
+    {
+      "datasource": "juicer_mtevents",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 21
+      },
+      "id": 2,
+      "options": {
+        "showHeader": true
+      },
+      "pluginVersion": "8.2.2",
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  time_index AS \"time\",\n  uid AS \"UID\",\n  CAST(isactive AS varchar) AS \"IS ACTIVE\"\nFROM eteventsvalues\nORDER BY 1",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "title": "Panel Title",
+      "type": "table"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 31,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Apple Juice Factory Copy",
+  "uid": "zjohwi5nk",
+  "version": 1
+}
