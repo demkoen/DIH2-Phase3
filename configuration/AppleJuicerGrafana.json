@@ -23,7 +23,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -42,7 +42,7 @@
       "type": "row"
     },
     {
-      "datasource": null,
+      "datasource": "mtpackmlservice",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -55,9 +55,29 @@
           "mappings": [
             {
               "options": {
+                "Aborted": {
+                  "color": "semi-dark-red",
+                  "index": 7
+                },
+                "Aborting": {
+                  "color": "light-red",
+                  "index": 6
+                },
+                "Clearing": {
+                  "color": "super-light-blue",
+                  "index": 8
+                },
                 "Execute": {
                   "color": "dark-green",
                   "index": 3
+                },
+                "Held": {
+                  "color": "light-yellow",
+                  "index": 10
+                },
+                "Holding": {
+                  "color": "super-light-yellow",
+                  "index": 9
                 },
                 "Idle": {
                   "color": "dark-blue",
@@ -72,7 +92,7 @@
                   "index": 4
                 },
                 "Stopped": {
-                  "color": "red",
+                  "color": "dark-red",
                   "index": 0
                 },
                 "Stopping": {
@@ -147,7 +167,7 @@
       "type": "state-timeline"
     },
     {
-      "datasource": null,
+      "datasource": "mtpackmlservice",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -160,9 +180,29 @@
           "mappings": [
             {
               "options": {
+                "Aborted": {
+                  "color": "semi-dark-red",
+                  "index": 7
+                },
+                "Aborting": {
+                  "color": "light-red",
+                  "index": 6
+                },
+                "Clearing": {
+                  "color": "super-light-blue",
+                  "index": 8
+                },
                 "Execute": {
                   "color": "dark-green",
                   "index": 3
+                },
+                "Held": {
+                  "color": "light-yellow",
+                  "index": 10
+                },
+                "Holding": {
+                  "color": "super-light-yellow",
+                  "index": 9
                 },
                 "Idle": {
                   "color": "dark-blue",
@@ -177,7 +217,7 @@
                   "index": 4
                 },
                 "Stopped": {
-                  "color": "red",
+                  "color": "dark-red",
                   "index": 0
                 },
                 "Stopping": {
@@ -870,12 +910,12 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Apple Juice Factory Copy",
   "uid": "zjohwi5nk",
-  "version": 1
+  "version": 4
 }
