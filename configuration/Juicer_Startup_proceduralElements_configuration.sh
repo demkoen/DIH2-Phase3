@@ -1,7 +1,7 @@
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/services' \
+  'http://192.168.178.101:4041/iot/services' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "services": [
@@ -17,9 +17,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -48,9 +48,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -79,9 +79,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -110,9 +110,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -141,9 +141,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -172,9 +172,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -203,9 +203,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -234,9 +234,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -265,9 +265,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -296,9 +296,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -327,9 +327,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -358,9 +358,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -389,9 +389,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -420,9 +420,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -451,9 +451,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -482,9 +482,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -513,9 +513,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -544,9 +544,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
  "devices": [
@@ -575,9 +575,9 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:1026/v2/subscriptions/' \
+  'http://192.168.178.101:1026/v2/subscriptions/' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: ProceduralElements' \
+  -H 'fiware-service: ProceduralElementService' \
   -H 'fiware-servicepath: /proceduralElementStates' \
   -d '{
   "description": "plc_id",

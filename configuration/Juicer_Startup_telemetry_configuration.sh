@@ -1,5 +1,5 @@
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/services' \
+  'http://192.168.178.101:4041/iot/services' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: telemetry' \
   -H 'fiware-servicepath: /telemetryValues' \
@@ -9,7 +9,7 @@ curl -iX POST \
      "apikey":      "telemetry",
      "cbroker":     "http://orion:1026",
      "entity_type": "ProcessCell",
-     "resource":    "telemetry/"
+     "resource":    "telemetry"
    }
  ]
 }'
@@ -17,7 +17,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: telemetry' \
   -H 'fiware-servicepath: /telemetryValues' \
@@ -44,7 +44,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: telemetry' \
   -H 'fiware-servicepath: /telemetryValues' \
@@ -71,7 +71,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://10.11.118.60:1026/v2/subscriptions/' \
+  'http://192.168.178.101:1026/v2/subscriptions/' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: telemetry' \
   -H 'fiware-servicepath: /telemetryValues' \

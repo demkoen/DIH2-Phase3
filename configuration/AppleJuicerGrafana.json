@@ -28,13 +28,264 @@
   "liveNow": false,
   "panels": [
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 0
+      },
+      "id": 30,
+      "panels": [
+        {
+          "datasource": "mttelemetry",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": ""
+                  }
+                ]
+              },
+              "unit": "celsius"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "id": 32,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "single"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT \n  time_index AS \"time\",\n  CAST(value AS FLOAT) AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank\"\nFROM ettelemetryvalues\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank'\nORDER BY 1\n",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT \n  time_index AS \"time\",\n  CAST(value AS FLOAT) AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank\"\nFROM ettelemetryvalues\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank'\nORDER BY 1",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Temperatures",
+          "type": "timeseries"
+        },
+        {
+          "datasource": "mttelemetry",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 25
+                  },
+                  {
+                    "color": "red",
+                    "value": 27.5
+                  }
+                ]
+              },
+              "unit": "celsius"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 1
+          },
+          "id": 34,
+          "options": {
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "text": {}
+          },
+          "pluginVersion": "8.2.2",
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT \n  time_index AS \"time\",\n  CAST(value AS FLOAT) AS \"Vitamine C mixing tank\"\nFROM ettelemetryvalues\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank'\nORDER BY 1",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT \n  time_index AS \"time\",\n  CAST(value AS FLOAT) AS \"Apple juice mixing tank\"\nFROM ettelemetryvalues\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank'\nORDER BY 1",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Temperatures",
+          "type": "gauge"
+        }
+      ],
+      "title": "Telemetry",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
       },
       "id": 28,
       "panels": [],
@@ -119,7 +370,7 @@
         "h": 8,
         "w": 19,
         "x": 5,
-        "y": 1
+        "y": 2
       },
       "id": 4,
       "options": {
@@ -141,7 +392,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"PackML State\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"PackML State\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell' AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "A",
           "select": [
             [
@@ -244,7 +495,7 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 10
       },
       "id": 5,
       "options": {
@@ -266,7 +517,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer' AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "A",
           "select": [
             [
@@ -293,7 +544,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "B",
           "select": [
             [
@@ -320,7 +571,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder' AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "C",
           "select": [
             [
@@ -347,7 +598,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank' AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "D",
           "select": [
             [
@@ -374,7 +625,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "E",
           "select": [
             [
@@ -401,7 +652,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line' AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "F",
           "select": [
             [
@@ -428,7 +679,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "G",
           "select": [
             [
@@ -455,7 +706,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "H",
           "select": [
             [
@@ -482,7 +733,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "I",
           "select": [
             [
@@ -509,7 +760,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "J",
           "select": [
             [
@@ -536,7 +787,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "K",
           "select": [
             [
@@ -563,7 +814,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "L",
           "select": [
             [
@@ -590,7 +841,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "M",
           "select": [
             [
@@ -617,7 +868,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "N",
           "select": [
             [
@@ -644,7 +895,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "O",
           "select": [
             [
@@ -671,7 +922,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "P",
           "select": [
             [
@@ -698,7 +949,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "Q",
           "select": [
             [
@@ -725,7 +976,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "R",
           "select": [
             [
@@ -752,7 +1003,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "S",
           "select": [
             [
@@ -779,7 +1030,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "T",
           "select": [
             [
@@ -806,7 +1057,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  time_index AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve'\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "U",
           "select": [
             [
@@ -863,7 +1114,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 21
+        "y": 22
       },
       "id": 2,
       "options": {
@@ -915,7 +1166,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Apple Juice Factory Copy",
+  "title": "Apple Juice Factory",
   "uid": "zjohwi5nk",
-  "version": 4
+  "version": 3
 }
