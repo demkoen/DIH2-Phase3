@@ -1,5 +1,5 @@
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/services' \
+  'http://10.11.118.60:4041/iot/services' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -17,7 +17,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -44,7 +44,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -71,7 +71,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -98,7 +98,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -125,7 +125,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -152,7 +152,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -179,7 +179,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -206,7 +206,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -233,7 +233,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -260,7 +260,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -287,7 +287,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -314,7 +314,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -341,7 +341,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -368,7 +368,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -395,7 +395,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -422,7 +422,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -449,7 +449,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -476,7 +476,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -503,7 +503,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -530,7 +530,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -557,7 +557,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -585,7 +585,7 @@ sleep 0.5
 
 
 curl -iX POST \
-  'http://192.168.178.101:4041/iot/devices' \
+  'http://10.11.118.60:4041/iot/devices' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -612,7 +612,7 @@ curl -iX POST \
 sleep 0.5
 
 curl -iX POST \
-  'http://192.168.178.101:1026/v2/subscriptions/' \
+  'http://10.11.118.60:1026/v2/subscriptions/' \
   -H 'Content-Type: application/json' \
   -H 'fiware-service: packmlService' \
   -H 'fiware-servicepath: /packmlStates' \
@@ -626,7 +626,7 @@ curl -iX POST \
     ],
     "condition": {
       "attrs": [
-        "oldstate", "newstate", "oldname", "newname", "modeChangeTime", "treepath"
+        "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "treepath"
       ]
     }
   },
@@ -635,12 +635,17 @@ curl -iX POST \
       "url": "http://quantumleap:8668/v2/notify"
     },
     "attrs": [
-      "oldstate", "newstate", "oldname", "newname", "modeChangeTime", "treepath"
+      "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "treepath"
     ],
-    "metadata": ["dateCreated", "dateModified", "previousValue", "actionType"]
+    "metadata": ["dateCreated", "dateModified"]
   }
 }'
 
-sleep 0.5
-
-pause
+#!/bin/bash
+echo "Press any key to continue"
+while [ true ] ; do
+read -t 1 -n 1
+if [ $? = 0 ] ; then
+exit ;
+fi
+done
