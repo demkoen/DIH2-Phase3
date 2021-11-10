@@ -14,7 +14,6 @@ curl -iX POST \
  ]
 }'
 
-sleep 0.5
 
 curl -iX POST \
   'http://10.11.118.60:4041/iot/devices' \
@@ -24,9 +23,9 @@ curl -iX POST \
   -d '{
  "devices": [
    {
-     "device_id":   "Apple%20juice%20procedure",
+     "device_id":   "Apple juice procedure",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -37,7 +36,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -57,7 +56,7 @@ curl -iX POST \
    {
      "device_id":   "Apple_Juice_mixing_unit_procedure",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -68,7 +67,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -88,7 +87,7 @@ curl -iX POST \
    {
      "device_id":   "Apple_juice_feed_operation",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -99,7 +98,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -119,7 +118,7 @@ curl -iX POST \
    {
      "device_id":   "Feed_sugar_solution_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -130,7 +129,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -150,7 +149,7 @@ curl -iX POST \
    {
      "device_id":   "Feed_apple_juice_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -161,7 +160,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -181,7 +180,7 @@ curl -iX POST \
    {
      "device_id":   "Agitate_apple_juice_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -192,7 +191,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -212,7 +211,7 @@ curl -iX POST \
    {
      "device_id":   "Apple_juice_cooling_operation",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -223,7 +222,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -243,7 +242,7 @@ curl -iX POST \
    {
      "device_id":   "Cool_apple_juice_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -254,7 +253,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -274,7 +273,7 @@ curl -iX POST \
    {
      "device_id":   "Apple_juice_transfer_operation",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -285,7 +284,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -305,7 +304,7 @@ curl -iX POST \
    {
      "device_id":   "transfer_apple_juice_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -316,7 +315,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -336,7 +335,7 @@ curl -iX POST \
    {
      "device_id":   "Vitamine_C_addition_unit_procedure",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -347,7 +346,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -367,7 +366,7 @@ curl -iX POST \
    {
      "device_id":   "Vitamine_C_addition_operation",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -378,7 +377,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -398,7 +397,7 @@ curl -iX POST \
    {
      "device_id":   "Add_vitamine_C_pahse",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -409,7 +408,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -429,7 +428,7 @@ curl -iX POST \
    {
      "device_id":   "Agitate_mixed_apple_juice_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -440,7 +439,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -460,7 +459,7 @@ curl -iX POST \
    {
      "device_id":   "Mixed_apple_juice_cooling_operation",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -471,7 +470,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -491,7 +490,7 @@ curl -iX POST \
    {
      "device_id":   "Cool_mixed_apple_juice_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -502,7 +501,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -522,7 +521,7 @@ curl -iX POST \
    {
      "device_id":   "Mixed_apple_juice_transfer_operation",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -533,7 +532,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -553,7 +552,7 @@ curl -iX POST \
    {
      "device_id":   "Transfer_mixed_apple_juice_phase",
      "entity_name": "ProceduralElements",
-     "entity_type": "ProceduralElementsValues",
+     "entity_type": "proceduralElementStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -564,7 +563,7 @@ curl -iX POST \
        { "object_id": "elementType", "name": "elementType", "type": "Text" },
        { "object_id": "result", "name": "result", "type": "int" },
        { "object_id": "duration", "name": "duration", "type": "int" },
-       { "object_id": "contextId", "name": "contextId", "type": "DateTime" },
+       { "object_id": "contextId", "name": "contextId", "type": "Text" },
        { "object_id": "executer", "name": "executer", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
@@ -603,6 +602,8 @@ curl -iX POST \
     "metadata": ["dateCreated", "dateModified"]
   }
 }'
+
+sleep 0.5
 
 #!/bin/bash
 echo "Press any key to continue"

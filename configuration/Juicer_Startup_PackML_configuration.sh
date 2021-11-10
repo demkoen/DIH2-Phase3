@@ -456,7 +456,7 @@ curl -iX POST \
   -d '{
  "devices": [
    {
-     "device_id":   "Vitamine_C_mixing_tank",
+     "device_id":   "Mixed_apple_juice_transfer_line",
      "entity_name": "PackML",
      "entity_type": "PackMLStates",
      "transport":   "MQTT",
@@ -640,6 +640,8 @@ curl -iX POST \
     "metadata": ["dateCreated", "dateModified"]
   }
 }'
+
+sleep 0.5
 
 #!/bin/bash
 echo "Press any key to continue"

@@ -30,11 +30,10 @@ curl -iX POST \
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "uid", "name": "uid", "type": "Text" },
-       { "object_id": "isActive", "name": "isActive", "type": "Text" },
+       { "object_id": "uid", "name": "uid", "type": "int" },
+       { "object_id": "isActive", "name": "isActive", "type": "Boolean" },
        { "object_id": "lastChangeTime", "name": "lastChangeTime", "type": "DateTime" },
-       { "object_id": "description", "name": "description", "type": "Text" },
-       { "object_id": "arguments", "name": "arguments", "type": "Text" }
+       { "object_id": "description", "name": "description", "type": "Text" }
      ]
    }
  ]
@@ -56,11 +55,10 @@ curl -iX POST \
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "uid", "name": "uid", "type": "Text" },
-       { "object_id": "isActive", "name": "isActive", "type": "Text" },
+       { "object_id": "uid", "name": "uid", "type": "int" },
+       { "object_id": "isActive", "name": "isActive", "type": "Boolean" },
        { "object_id": "lastChangeTime", "name": "lastChangeTime", "type": "DateTime" },
-       { "object_id": "description", "name": "description", "type": "Text" },
-       { "object_id": "arguments", "name": "arguments", "type": "Text" }
+       { "object_id": "description", "name": "description", "type": "Text" }
      ]
    }
  ]
@@ -82,11 +80,10 @@ curl -iX POST \
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "uid", "name": "uid", "type": "Text" },
-       { "object_id": "isActive", "name": "isActive", "type": "Text" },
+       { "object_id": "uid", "name": "uid", "type": "int" },
+       { "object_id": "isActive", "name": "isActive", "type": "Boolean" },
        { "object_id": "lastChangeTime", "name": "lastChangeTime", "type": "DateTime" },
-       { "object_id": "description", "name": "description", "type": "Text" },
-       { "object_id": "arguments", "name": "arguments", "type": "Text" }
+       { "object_id": "description", "name": "description", "type": "Text" }
      ]
    }
  ]
@@ -108,11 +105,10 @@ curl -iX POST \
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "uid", "name": "uid", "type": "Text" },
-       { "object_id": "isActive", "name": "isActive", "type": "Text" },
+       { "object_id": "uid", "name": "uid", "type": "int" },
+       { "object_id": "isActive", "name": "isActive", "type": "Boolean" },
        { "object_id": "lastChangeTime", "name": "lastChangeTime", "type": "DateTime" },
-       { "object_id": "description", "name": "description", "type": "Text" },
-       { "object_id": "arguments", "name": "arguments", "type": "Text" }
+       { "object_id": "description", "name": "description", "type": "Text" }
      ]
    }
  ]
@@ -134,11 +130,10 @@ curl -iX POST \
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "uid", "name": "uid", "type": "Text" },
-       { "object_id": "isActive", "name": "isActive", "type": "Text" },
+       { "object_id": "uid", "name": "uid", "type": "int" },
+       { "object_id": "isActive", "name": "isActive", "type": "Boolean" },
        { "object_id": "lastChangeTime", "name": "lastChangeTime", "type": "DateTime" },
-       { "object_id": "description", "name": "description", "type": "Text" },
-       { "object_id": "arguments", "name": "arguments", "type": "Text" }
+       { "object_id": "description", "name": "description", "type": "Text" }
      ]
    }
  ]
@@ -161,7 +156,7 @@ curl -iX POST \
     ],
     "condition": {
       "attrs": [
-        "uid", "isActive", "commandKey", "lastChangeTime", "elemdescriptionentType", "arguments"
+        "uid", "isActive", "commandKey", "lastChangeTime", "description"
       ]
     }
   },
@@ -170,11 +165,13 @@ curl -iX POST \
       "url": "http://quantumleap:8668/v2/notify"
     },
     "attrs": [
-      "uid", "isActive", "commandKey", "lastChangeTime", "elemdescriptionentType", "arguments"
+      "uid", "isActive", "commandKey", "lastChangeTime", "description"
     ],
     "metadata": ["dateCreated", "dateModified"]
   }
 }'
+
+sleep 0.5
 
 #!/bin/bash
 echo "Press any key to continue"

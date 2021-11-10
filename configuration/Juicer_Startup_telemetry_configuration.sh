@@ -100,6 +100,8 @@ curl -iX POST \
   }
 }'
 
+sleep 0.5
+
 #!/bin/bash
 echo "Press any key to continue"
 while [ true ] ; do
