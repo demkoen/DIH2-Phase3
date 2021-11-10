@@ -829,7 +829,7 @@
           "type": "state-timeline"
         }
       ],
-      "title": "PackML States",
+      "title": "PackML States (ISA S88 Physical model)",
       "type": "row"
     },
     {
@@ -1132,7 +1132,7 @@
           "type": "table"
         }
       ],
-      "title": "Procedural Elements",
+      "title": "Procedural Elements (ISA S88 procedural model)",
       "type": "row"
     },
     {
@@ -1143,6 +1143,193 @@
         "w": 24,
         "x": 0,
         "y": 2
+      },
+      "id": 36,
+      "panels": [
+        {
+          "datasource": "mtcommandstateservice",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "displayMode": "auto"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 3
+          },
+          "id": 38,
+          "options": {
+            "frameIndex": 1,
+            "showHeader": true
+          },
+          "pluginVersion": "8.2.2",
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM etcommandstates\nORDER BY 1 DESC",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "caller"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "caller"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "etcommandstates",
+              "timeColumn": "time_index",
+              "where": []
+            }
+          ],
+          "title": "All commands",
+          "type": "table"
+        },
+        {
+          "datasource": "mtcommandstateservice",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 11
+          },
+          "id": 40,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "single"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "metricColumn": "none",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM etcommandstates\nWHERE result <> 0 AND result <> 2147483647\nORDER BY 1 DESC",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "column"
+                  }
+                ]
+              ],
+              "timeColumn": "time",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Failed commands",
+          "type": "timeseries"
+        }
+      ],
+      "title": "Commands (ISA S88 Process model)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
       },
       "id": 30,
       "panels": [
@@ -1203,7 +1390,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 3
+            "y": 24
           },
           "id": 32,
           "options": {
@@ -1307,7 +1494,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 3
+            "y": 24
           },
           "id": 34,
           "options": {
@@ -1383,7 +1570,7 @@
           "type": "gauge"
         }
       ],
-      "title": "Telemetry",
+      "title": "Telemetry (Continuous sensor data)",
       "type": "row"
     },
     {
@@ -1393,7 +1580,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 3
+        "y": 4
       },
       "id": 44,
       "panels": [
@@ -1429,7 +1616,7 @@
             "h": 9,
             "w": 12,
             "x": 0,
-            "y": 4
+            "y": 28
           },
           "id": 2,
           "options": {
@@ -1468,194 +1655,7 @@
           "type": "table"
         }
       ],
-      "title": "Events",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 4
-      },
-      "id": 36,
-      "panels": [
-        {
-          "datasource": "mtcommandstateservice",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "displayMode": "auto"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 5
-          },
-          "id": 38,
-          "options": {
-            "frameIndex": 1,
-            "showHeader": true
-          },
-          "pluginVersion": "8.2.2",
-          "targets": [
-            {
-              "format": "time_series",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM etcommandstates\nORDER BY 1 DESC",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "caller"
-                    ],
-                    "type": "column"
-                  },
-                  {
-                    "params": [
-                      "caller"
-                    ],
-                    "type": "alias"
-                  }
-                ]
-              ],
-              "table": "etcommandstates",
-              "timeColumn": "time_index",
-              "where": []
-            }
-          ],
-          "title": "All commands",
-          "type": "table"
-        },
-        {
-          "datasource": "mtcommandstateservice",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 13
-          },
-          "id": 40,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom"
-            },
-            "tooltip": {
-              "mode": "single"
-            }
-          },
-          "targets": [
-            {
-              "format": "time_series",
-              "group": [],
-              "metricColumn": "none",
-              "rawQuery": true,
-              "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM etcommandstates\nWHERE result <> 0 AND result <> 2147483647\nORDER BY 1 DESC",
-              "refId": "A",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "column"
-                  }
-                ]
-              ],
-              "timeColumn": "time",
-              "where": [
-                {
-                  "name": "$__timeFilter",
-                  "params": [],
-                  "type": "macro"
-                }
-              ]
-            }
-          ],
-          "title": "Failed commands",
-          "type": "timeseries"
-        }
-      ],
-      "title": "Commands",
+      "title": "Events (abnormalities)",
       "type": "row"
     }
   ],
@@ -1674,5 +1674,5 @@
   "timezone": "",
   "title": "Apple Juice Factory",
   "uid": "zjohwi5nk",
-  "version": 3
+  "version": 4
 }
