@@ -67,7 +67,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 1
       },
@@ -195,8 +195,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 19,
-        "x": 5,
+        "w": 8,
+        "x": 4,
         "y": 1
       },
       "id": 4,
@@ -319,8 +319,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 12,
-        "w": 24,
+        "h": 11,
+        "w": 12,
         "x": 0,
         "y": 9
       },
@@ -916,7 +916,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 20
       },
       "id": 42,
       "panels": [],
@@ -955,7 +955,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 22
+        "y": 21
       },
       "id": 53,
       "options": {
@@ -1026,8 +1026,8 @@
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 12,
-        "y": 22
+        "x": 0,
+        "y": 29
       },
       "id": 51,
       "options": {
@@ -1099,7 +1099,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 30
+        "y": 37
       },
       "id": 50,
       "options": {
@@ -1170,8 +1170,8 @@
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 12,
-        "y": 30
+        "x": 0,
+        "y": 45
       },
       "id": 52,
       "options": {
@@ -1253,7 +1253,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 53
       },
       "id": 59,
       "options": {
@@ -1371,7 +1371,7 @@
         "h": 6,
         "w": 6,
         "x": 0,
-        "y": 44
+        "y": 59
       },
       "id": 56,
       "options": {
@@ -1461,7 +1461,7 @@
         "h": 6,
         "w": 6,
         "x": 6,
-        "y": 44
+        "y": 59
       },
       "id": 57,
       "options": {
@@ -1551,7 +1551,7 @@
         "h": 6,
         "w": 2,
         "x": 0,
-        "y": 50
+        "y": 65
       },
       "id": 68,
       "options": {
@@ -1641,7 +1641,7 @@
         "h": 6,
         "w": 2,
         "x": 2,
-        "y": 50
+        "y": 65
       },
       "id": 58,
       "options": {
@@ -1731,7 +1731,7 @@
         "h": 6,
         "w": 2,
         "x": 4,
-        "y": 50
+        "y": 65
       },
       "id": 60,
       "options": {
@@ -1821,7 +1821,7 @@
         "h": 6,
         "w": 2,
         "x": 6,
-        "y": 50
+        "y": 65
       },
       "id": 61,
       "options": {
@@ -1911,7 +1911,7 @@
         "h": 6,
         "w": 2,
         "x": 8,
-        "y": 50
+        "y": 65
       },
       "id": 70,
       "options": {
@@ -1934,7 +1934,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Mixed_apple_juice_cooling_operation'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Mixed_apple_juice_cooling_operation'\norder by time_index DESC LIMIT 1",
           "refId": "A",
           "select": [
             [
@@ -2001,7 +2001,7 @@
         "h": 6,
         "w": 2,
         "x": 10,
-        "y": 50
+        "y": 65
       },
       "id": 72,
       "options": {
@@ -2091,7 +2091,7 @@
         "h": 3,
         "w": 2,
         "x": 0,
-        "y": 56
+        "y": 71
       },
       "id": 67,
       "options": {
@@ -2180,8 +2180,98 @@
       "gridPos": {
         "h": 3,
         "w": 2,
+        "x": 2,
+        "y": 71
+      },
+      "id": 71,
+      "options": {
+        "alignValue": "left",
+        "legend": {
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "mergeValues": true,
+        "rowHeight": 0.9,
+        "showValue": "never",
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.2",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'transfer_apple_juice_phase'\norder by time_index DESC limit 1",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "title": "Transfer juice(Phase)",
+      "type": "state-timeline"
+    },
+    {
+      "datasource": "mtproceduralelementservice",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "fillOpacity": 70,
+            "lineWidth": 0
+          },
+          "mappings": [
+            {
+              "options": {
+                "Completed": {
+                  "color": "green",
+                  "index": 1
+                },
+                "execute": {
+                  "color": "yellow",
+                  "index": 0
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
         "x": 4,
-        "y": 56
+        "y": 71
       },
       "id": 76,
       "options": {
@@ -2272,7 +2362,7 @@
         "h": 3,
         "w": 2,
         "x": 6,
-        "y": 56
+        "y": 71
       },
       "id": 64,
       "options": {
@@ -2362,7 +2452,7 @@
         "h": 3,
         "w": 2,
         "x": 8,
-        "y": 56
+        "y": 71
       },
       "id": 66,
       "options": {
@@ -2452,7 +2542,7 @@
         "h": 3,
         "w": 2,
         "x": 10,
-        "y": 56
+        "y": 71
       },
       "id": 74,
       "options": {
@@ -2542,7 +2632,7 @@
         "h": 3,
         "w": 2,
         "x": 0,
-        "y": 59
+        "y": 74
       },
       "id": 75,
       "options": {
@@ -2632,7 +2722,7 @@
         "h": 3,
         "w": 2,
         "x": 10,
-        "y": 59
+        "y": 74
       },
       "id": 65,
       "options": {
@@ -2722,7 +2812,7 @@
         "h": 3,
         "w": 2,
         "x": 0,
-        "y": 62
+        "y": 77
       },
       "id": 63,
       "options": {
@@ -2771,103 +2861,13 @@
       "type": "state-timeline"
     },
     {
-      "datasource": "mtproceduralelementservice",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "fillOpacity": 70,
-            "lineWidth": 0
-          },
-          "mappings": [
-            {
-              "options": {
-                "Completed": {
-                  "color": "green",
-                  "index": 1
-                },
-                "execute": {
-                  "color": "yellow",
-                  "index": 0
-                }
-              },
-              "type": "value"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 0,
-        "y": 65
-      },
-      "id": 71,
-      "options": {
-        "alignValue": "left",
-        "legend": {
-          "displayMode": "hidden",
-          "placement": "bottom"
-        },
-        "mergeValues": true,
-        "rowHeight": 0.9,
-        "showValue": "never",
-        "tooltip": {
-          "mode": "single"
-        }
-      },
-      "pluginVersion": "8.2.2",
-      "targets": [
-        {
-          "format": "table",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'transfer_apple_juice_phase'\norder by time_index DESC limit 1",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "timeColumn": "time",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
-        }
-      ],
-      "title": "Transfer juice(Phase)",
-      "type": "state-timeline"
-    },
-    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 68
+        "y": 80
       },
       "id": 36,
       "panels": [],
@@ -2906,7 +2906,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 69
+        "y": 81
       },
       "id": 38,
       "options": {
@@ -3002,7 +3002,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 77
+        "y": 89
       },
       "id": 40,
       "options": {
@@ -3053,7 +3053,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 85
+        "y": 97
       },
       "id": 30,
       "panels": [],
@@ -3117,7 +3117,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 86
+        "y": 98
       },
       "id": 32,
       "options": {
@@ -3220,8 +3220,8 @@
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 12,
-        "y": 86
+        "x": 0,
+        "y": 106
       },
       "id": 34,
       "options": {
@@ -3303,7 +3303,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 94
+        "y": 114
       },
       "id": 44,
       "panels": [],
@@ -3342,7 +3342,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 95
+        "y": 115
       },
       "id": 2,
       "options": {
@@ -3396,5 +3396,5 @@
   "timezone": "",
   "title": "Apple Juice Factory",
   "uid": "zjohwi5nk",
-  "version": 38
+  "version": 43
 }
