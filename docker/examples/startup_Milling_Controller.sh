@@ -24,7 +24,7 @@ curl -iX POST \
   -d '{
   "devices": [
   {
-    "device_id":   "Spindle_Controller",
+    "device_id":   "Spindle%20Controller",
     "entity_name": "High_Volume_Milling_Cell:UN_machining:Milling_Equipment",
     "entity_type": "Spindle_Controller",
     "protocol":    "PDI-IoTA-UltraLight",
@@ -68,5 +68,4 @@ curl -iX POST \
     ],
     "metadata": ["dateCreated", "dateModified"]
   },
-  "throttling": 1
 }'

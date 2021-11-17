@@ -31,7 +31,7 @@ services:
       - "${ORION_PORT}"
     ports:
       - "${ORION_PORT}:${ORION_PORT}" # localhost:1026
-    command: -dbhost mongo-db -logLevel DEBUG
+    command: -dbhost mongo-db -logLevel NONE
     healthcheck:
       test: curl --fail -s http://orion:${ORION_PORT}/version || exit 1
       interval: 5s
@@ -45,7 +45,7 @@ services:
   # 
 
   iot-agent:
-    image: fiware/iotagent-ul:${ULTRALIGHT_VERSION}
+    image: fiware/iotagent-json:${IOTAGENT_JASON_VERSION}
     hostname: iot-agent
     container_name: fiware-iot-agent
     depends_on:
@@ -62,7 +62,7 @@ services:
       - IOTA_CB_PORT=${ORION_PORT} # port the context broker listens on to update context
       - IOTA_NORTH_PORT=${IOTA_NORTH_PORT}
       - IOTA_REGISTRY_TYPE=mongodb #Whether to hold IoT device info in memory or in a database
-      - IOTA_LOG_LEVEL=DEBUG # The log level of the IoT Agent
+      - IOTA_LOG_LEVEL=FATAL # The log level of the IoT Agent
       - IOTA_TIMESTAMP=true # Supply timestamp information with each measurement
       - IOTA_CB_NGSI_VERSION=v2 # use NGSIv2 when sending updates for active attributes
       - IOTA_AUTOCAST=true # Ensure Ultralight number values are read as numbers not strings
