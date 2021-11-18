@@ -36,7 +36,7 @@ The Physical Model is what we want to show in our online representation in Grafa
 
 ## S88 Translation to IoT
 
-In the communication protocol we divide the variables according to the physical model.
+Besides the PackML states of the physical model and the Elements of the Procedural model, we've chosen to also define telemetry, command and event data of the SMB. How this data is setup is declared as follows
 
 ### Providing the PackML states
 

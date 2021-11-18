@@ -87,7 +87,10 @@ Please refer to the [CrateDB documentation](https://crate.io/docs/) for more adv
 ## Grafana
 
 Basic setup and configuration of Grafana is done in the [Installation & Administration Guide](installationguide.md).
+See also the [Video of setting up Grafana].
 
 Grafana is an enormous and powerfull tool. The implementation is different for every usecase. Please refer to the lates [Grafana documentation](https://grafana.com/docs/grafana/latest/) to use it's full potential
 
 [Top](#top)
+
+[Video of setting up Grafana]: https://github.com/demkoen/DIH2-Phase3/blob/feature/step-by-step-tutorial/demos/Creating_Grafana_dashboard.mkv "Video of setting up Grafana"
