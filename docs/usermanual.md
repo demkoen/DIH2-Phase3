@@ -35,7 +35,7 @@ Enter the ```hostname``` or ```Ip address``` of the machine that is running the 
 
 When the connection is made, this application shows and monitors the sent messages from and to the broker, as shown in the following screenshot
 
-![Add new dashboard](../images/MQTT_Explorer_messages.png)
+![Add new dashboard](../images/MQTT_Explorer_messages_v2.png)
 
 [Top](#top)
 
@@ -45,7 +45,7 @@ When the connection is made, this application shows and monitors the sent messag
 
 | :information_source: Tip                                                               |
 |----------------------------------------------------------------------------------------|
-|use [reqbin.com/curl](https://reqbin.com/curl) for in browser curl commands and feedback|
+|use [reqbin.com/curl](https://reqbin.com/curl) for in browser curl commands and feedback or an application like Postman|
 
 To check the devices that are registerd in the IoT agent you need to know the registered service. In our example project, the fiware-service is ```_units```
 
@@ -60,7 +60,7 @@ curl -X GET \
 -H 'fiware-servicepath: /'
 ```
 
-Please refer to the [Fiware IoT Agent documentation](https://github.com/FIWARE/tutorials.IoT-Agent) for more advanced commands
+Please refer to the [Fiware IoT Agent documentation](https://github.com/FIWARE/tutorials.IoT-Agent) for other commands
 
 [Top](#top)
 
@@ -87,7 +87,10 @@ Please refer to the [CrateDB documentation](https://crate.io/docs/) for more adv
 ## Grafana
 
 Basic setup and configuration of Grafana is done in the [Installation & Administration Guide](installationguide.md).
+See also the [Video of setting up Grafana].
 
 Grafana is an enormous and powerfull tool. The implementation is different for every usecase. Please refer to the lates [Grafana documentation](https://grafana.com/docs/grafana/latest/) to use it's full potential
 
 [Top](#top)
+
+[Video of setting up Grafana]: https://github.com/demkoen/DIH2-Phase3/blob/feature/step-by-step-tutorial/demos/Creating_Grafana_dashboard.mkv "Video of setting up Grafana"

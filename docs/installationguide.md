@@ -195,6 +195,8 @@ When you visit the Grafana webinterface for the first time, you will have to set
 5. Save & test the connection
 ![Configure ](/images/grafana_2.png)
 
+See also the [Video of setting up Grafana]
+
 [Top](#top)
 
 ### Creating a new dashboard
@@ -234,3 +236,5 @@ The final goal should be to generate the Grafana dashboard by an external progra
 4. Your dashboard is imported.
 
 [Top](#top)
+
+[Video of setting up Grafana]: https://github.com/demkoen/DIH2-Phase3/blob/feature/step-by-step-tutorial/demos/Creating_Grafana_dashboard.mkv "Video of setting up Grafana"
