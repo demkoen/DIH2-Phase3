@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "modelTags": "",
+    "$id": "https://github.com/demkoen/DIH2-Phase3/blob/feature/step-by-step-tutorial/configuration/schema_koen.json",
+    "$schemaVersion": "0.0.1",
+    "title": "SMB - Events",
+    "description": "Represent an event state of an SMB object",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+        },
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+        },
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "events"
+                    ],
+                    "description": "Property. NGSI Entity type. It has to be events"
+                }
+            },
+            "uid": {
+				"type": "number",
+                "description": "Property. Model:'http://schema.org/Number'. uid of the event"
+			},
+            "isActive": {
+				"type": "Boolean",
+				"description": "Property. Model:'https://schema.org/Boolean'. Shows the state of the event"
+			},
+            "lastChangeTime": {
+				"type": "string",
+                "format": "date-time",
+                "description": "Property. Model:'https://schema.org/DateTime'. Date and time of this observation represented by an ISO8601 UTC format."
+			},
+            "description": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. Description of the event"
+			}
+        }
+    ],
+    "required": [
+        "uid",
+        "description"
+    ]
+}

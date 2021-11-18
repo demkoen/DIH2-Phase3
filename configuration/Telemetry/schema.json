@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "modelTags": "",
+    "$id": "https://github.com/demkoen/DIH2-Phase3/blob/feature/step-by-step-tutorial/configuration/schema_koen.json",
+    "$schemaVersion": "0.0.1",
+    "title": "SMB - telemetry",
+    "description": "Represent telemetry information of an SMB object",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+        },
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+        },
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "telemetry"
+                    ],
+                    "description": "Property. NGSI Entity type. It has to be telemetry"
+                }
+            },
+            "treepath": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. Name of the treepath of the object"
+			},
+            "DateTime": {
+				"type": "string",
+                "format": "date-time",
+                "description": "Property. Model:'https://schema.org/DateTime'. Date and time of this observation represented by an ISO8601 UTC format."
+			},
+            "name": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. Name of the old sensor"
+			},
+            "unit": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. unit of the measurement"
+			},
+            "schema": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. schema of the measurement"
+			},
+            "value": {
+				"type": "number",
+                "description": "Property. Model:'http://schema.org/Number'. Numeric value of the sensor"
+			} 
+        }
+    ],
+    "required": [
+        "name",
+        "DateTime",
+        "value"
+    ]
+}
