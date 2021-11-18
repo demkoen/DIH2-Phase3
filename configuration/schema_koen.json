@@ -1,10 +1,10 @@
 {
     "$schema": "http://json-schema.org/schema#",
     "modelTags": "",
-    "$id": "https://smart-data-models.github.io/dataModel.Battery/BatteryStatus/schema.json",
-    "$schemaVersion": "0.0.2",
+    "$id": "https://github.com/demkoen/DIH2-Phase3/blob/feature/step-by-step-tutorial/configuration/schema_koen.json",
+    "$schemaVersion": "0.0.1",
     "title": "SMB - PackML",
-    "description": "Represent a status for a physical battery.",
+    "description": "Represent a PackML state of an ISA S88 object",
     "type": "object",
     "allOf": [
         {
@@ -18,51 +18,41 @@
                 "type": {
                     "type": "string",
                     "enum": [
-                        "BatteryStatus"
+                        "PackML"
                     ],
-                    "description": "Property. NGSI Entity type. It has to be BatteryStatus"
+                    "description": "Property. NGSI Entity type. It has to be PackML"
                 }
             },
-            "refBattery": {
-                "oneOf": [
-                    {
-                        "type": "string",
-                        "format": "uri"
-                    },
-                    {
-                        "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
-                    }
-                ],
-                "description": "Relationship. Model:'http://schema.org/URL'. Reference to the battery entity"
-            },
-            "statusPercent": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 1,
-                "description": "Property. Model:'http://schema.org/Number'. Percentage of charge available for the battery"
-            },
-            "acPowerInput": {
-                "type": "number",
-                "description": "Property. Model:'http://schema.org/Number'. Numeric value in volts for the alternate current charge. Units:'volts'"
-            },
-            "acPowerOutput": {
-                "type": "number",
-                "description": "Property. Model:'http://schema.org/Number'. Numeric value in volts for the alternate output. Units:'volts'"
-            },
-            "dcPowerInput": {
-                "type": "number",
-                "description": "Property. Model:'http://schema.org/Number'. Numeric value in volts for the continuous current charge. Units:'volts'"
-            },
-            "dcPowerOutput": {
-                "type": "number",
-                "description": "Property. Model:'http://schema.org/Number'. Numeric value in volts for the continuous current charge. Units:'volts'"
-            }
+            "oldstate": {
+				"type": "number",
+                "description": "Property. Model:'http://schema.org/Number'. Numeric value of the old PackML State"
+			},
+            "newstate": {
+				"type": "number",
+                "description": "Property. Model:'http://schema.org/Number'. Numeric value of the new PackML State"
+			},
+            "stateChangeTime": {
+				"type": "string",
+                "format": "date-time",
+                "description": "Property. Model:'https://schema.org/DateTime'. Date and time of this observation represented by an ISO8601 UTC format."
+			},
+            "oldname": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. Name of the old PackML State"
+			},
+            "newname": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. Name of the new PackML State"
+			},
+            "treepath": {
+				"type": "string",
+				"description": "Property. Model:'https://schema.org/Text'. Name of the treepath of the object"
+			}
         }
     ],
     "required": [
         "id",
         "type",
-        "refBattery",
-        "statusPercent"
+        "newname"
     ]
 }
