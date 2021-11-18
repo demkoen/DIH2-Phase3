@@ -38,6 +38,34 @@ The Physical Model is what we want to show in our online representation in Grafa
 
 In the communication protocol we divide the variables according to the physical model.
 
+### Providing the PackML states
+
+[PackML schema.json]
+
+### Providing the Procedural Elements
+
+[Procedural Elements schema.json]
+
+### Providing the telemetry data
+
+[Telemetry schema.json]
+
+### Providing command data
+
+[Commands schema.json]
+
+### Providing the event data
+
+[Events schema.json]
+
+[Top](#top)
+
+>| :exclamation: Warning       |
+>|---------------------------------------|
+>|Old documentation below. Stuff below this mark will be removed. We can talk Ultralight, but changed halfway the project to use JSON|
+
+[Top](#top)
+
 ### Providing (sensor)values
 
 Instead of an typical MQTT way of presenting values, we're presenting values via [UltraLight 2.0] payload.
@@ -101,3 +129,8 @@ In an application as MQTT Explorer it shows as follows:
 [ISA 88]: https://iautomation.nl/techniek/automatiseringstechniek/isa-88/?lang=en "ISA S88"
 [UltraLight 2.0]: https://fiware-iotagent-ul.readthedocs.io/en/latest/usermanual/index.html#user-programmers-manual "Ultralight 2.0 Protocol"
 [MQTT Explorer]: http://mqtt-explorer.com/ "MQTT Explorer"
+[PackML schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/PackML/schema.json "PackML schema.json"
+[Procedural Elements schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/ProceduralElements/schema.json "Procedural Elements schema.json"
+[Telemetry schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/Telemetry/schema.json "Telemetry schema.json"
+[Commands schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/Commands/schema.json "Commands schema.json"
+[Events schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/Events/schema.json "Events schema.json"
