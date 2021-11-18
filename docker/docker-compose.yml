@@ -45,7 +45,7 @@ services:
   # 
 
   iot-agent:
-    image: fiware/iotagent-json:${IOTAGENT_JASON_VERSION}
+    image: fiware/iotagent-json:${IOTAGENT_JSON_VERSION}
     hostname: iot-agent
     container_name: fiware-iot-agent
     depends_on:
