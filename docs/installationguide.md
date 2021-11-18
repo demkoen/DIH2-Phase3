@@ -53,23 +53,21 @@ If you remember our demo S88 project, we have data in our *Units*, *Equipment Mo
 
 ```curl
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/services' \
+  'http://192.168.178.101:4041/iot/services' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: _units' \
-  -H 'fiware-servicepath: /' \
+  -H 'fiware-service: packmlService' \
+  -H 'fiware-servicepath: /packmlStates' \
   -d '{
  "services": [
    {
-     "apikey":      "High_Volume_Milling_Cell",
+     "apikey":      "PackML",
      "cbroker":     "http://orion:1026",
-     "entity_type": "_Unit",
-     "resource":    "/"
+     "entity_type": "ProcessCell",
+     "resource":    "PackML/"
    }
  ]
 }'
 ```
-
-First of all, we need to create a new fiware-service for all units. We call the service ```_units```. We've added a leading underscore ```_``` to make it more 'human readable' in the database (The fiware-service name will become the database name). The ```apikey``` is the S88 physical parent. In this case "High_Volume_Milling_Cell". We give the ```entity_type``` a uniqe name
 
 [Top](#top)
 
@@ -79,56 +77,29 @@ In the following example, we configure the MQTT message ```High_Volume_Milling_C
 
 [Top](#top)
 
-#### Configuring IoT Agent with one variable
+#### Configuring PackML IoT Agent with multiple variables
 
 ```curl
 curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
+  'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: _units' \
-  -H 'fiware-servicepath: /' \
+  -H 'fiware-service: packmlService' \
+  -H 'fiware-servicepath: /packmlStates' \
   -d '{
  "devices": [
    {
-     "device_id":   "UN_machining",
-     "entity_name": "High_Volume_Milling_Cell",
-     "entity_type": "UN_machining",
-     "protocol":    "PDI-IoTA-UltraLight",
+     "device_id":   "Testmachine_Cell",
+     "entity_name": "PackML",
+     "entity_type": "PackMLStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "g", "name": "Count", "type": "Text" }
-     ]
-   }
- ]
-}'
-```
-
-[Top](#top)
-
-#### Configuring IoT Agent with multiple variables
-
-If we can do this with one variable, we can do it with more. Remember, the ```name``` is the 'new' name of the variable, as it will display in the MongoDB database.
-
-```curl
-curl -iX POST \
-  'http://10.11.118.60:4041/iot/devices' \
-  -H 'Content-Type: application/json' \
-  -H 'fiware-service: _units' \
-  -H 'fiware-servicepath: /' \
-  -d '{
- "devices": [
-   {
-     "device_id":   "UN_utilities",
-     "entity_name": "High_Volume_Milling_Cell",
-     "entity_type": "UN_utilities",
-     "protocol":    "PDI-IoTA-UltraLight",
-     "transport":   "MQTT",
-     "timezone":    "Europe/Berlin",
-     "attributes": [
-       { "object_id": "bleedAirStatus", "name": "BleedAirState", "type": "Text" },
-       { "object_id": "dustExtractionStatus", "name": "DustExtractionState", "type": "Text" },
-       { "object_id": "dustExtractionPower", "name": "DustExtractionPower", "type": "Text" }
+       { "object_id": "oldstate", "name": "oldstate", "type": "int" },
+       { "object_id": "newstate", "name": "newstate", "type": "int" },
+       { "object_id": "stateChangeTime", "name": "stateChangeTime", "type": "DateTime" },
+       { "object_id": "oldname", "name": "oldname", "type": "Text" },
+       { "object_id": "newname", "name": "newname", "type": "Text" },
+       { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
    }
  ]
@@ -141,21 +112,21 @@ curl -iX POST \
 
 ```curl
 curl -iX POST \
-  'http://10.11.118.60:1026/v2/subscriptions/' \
+  'http://192.168.178.101:1026/v2/subscriptions/' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: _units' \
-  -H 'fiware-servicepath: /' \
+  -H 'fiware-service: packmlService' \
+  -H 'fiware-servicepath: /packmlStates' \
   -d '{
   "description": "plc_id",
   "subject": {
     "entities": [
       {
-        "idPattern": "High_Volume_Milling_Cell"
+        "idPattern": "PackML"
       }
     ],
     "condition": {
       "attrs": [
-        "Count", "BleedAirState", "DustExtractionState", "DustExtractionPower"
+        "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "treepath"
       ]
     }
   },
@@ -164,11 +135,10 @@ curl -iX POST \
       "url": "http://quantumleap:8668/v2/notify"
     },
     "attrs": [
-      "Count", "BleedAirState", "DustExtractionState", "DustExtractionPower"
+      "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "treepath"
     ],
     "metadata": ["dateCreated", "dateModified"]
-  },
-  "throttling": 1
+  }
 }'
 ```
 
@@ -177,6 +147,8 @@ curl -iX POST \
 ## Configuring Grafana
 
 When you visit the Grafana webinterface for the first time, you will have to set a password for the default ```admin``` user. When this is done, you can configure the datasources.
+
+See also the [Video of setting up Grafana]
 
 [Top](#top)
 
@@ -194,8 +166,6 @@ When you visit the Grafana webinterface for the first time, you will have to set
    - Disable the TLS/SSL Mode
 5. Save & test the connection
 ![Configure ](/images/grafana_2.png)
-
-See also the [Video of setting up Grafana]
 
 [Top](#top)
 
