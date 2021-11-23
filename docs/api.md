@@ -70,67 +70,208 @@ Besides the PackML states of the physical model and the Elements of the Procedur
 
 [Top](#top)
 
->| :exclamation: Warning       |
->|---------------------------------------|
->|Old documentation below. Stuff below this mark will be removed. We can talk Ultralight, but changed halfway the project to use JSON|
+### MQTT Topics
 
-[Top](#top)
-
-### Providing (sensor)values
-
-Instead of an typical MQTT way of presenting values, we're presenting values via [UltraLight 2.0] payload.
-
-In the next example we have a component that measures two temperatures. One on the roof and in the basement. In a traditional way we could display the data as follows
-Typical MQTT:
-
-```jsx
-temperature/roof = 25
-temperature/basement = 15
-```
-
-Because we want to represent the data in a S88 structure, we want to concatenate the sensorvalues in the component that we've made available. This results in a generic *attrs* attribute, that contains all values of that compnent. For example:
-
-```jsx
-.../attrs = temp_roof|25|temp_basement|15
-```
-
-### MQTT Tree structure(s)
-
-We make the subdivision among
-
-* Process Cell (PC)
-  * Unit (UN)
-    * Equipment Module (EM)
-      * Control Module (CM)
-
-We Ignore the *site* and *Area* they don't hold any relevant information in this example. It is, however, possible to include them in your own project.
-
-In MQTT, the subdivisons of the parent(s) of are seperated by a dot (.) This is done to contain the nesting in MQTT to an acceptable level and make grouping easy. Only the element itself is sperated by an *forward* slash (/)
-For example, we have an varible, living in an Equipment module, the path will be
-
-```jsx
-PC.UN/EM/attrs = %varname%|value
-```
-
-In case of an variable in a Control Module, the path should be
-
-```jsx
-PC.UN.EM/CM/attrs = %varname%|value
-```
+* PackML
+  * attrs
+    * oldstate
+    * newstate
+    * stateChangeTime
+    * oldname
+    * newname
+    * treepath
+* ProceduralElements
+  * attrs
+    * commandSTate
+    * stateChangeTime
+    * commandKey
+    * caller
+    * elementType
+    * result
+    * durantion
+    * contextId
+    * executer
+    * treepath
+* telemetry
+  * attrs
+    * name
+    * unit
+    * schema
+    * value
+    * DateTime
+    * treepath
+* commands
+  * attrs
+    * commandSTate
+    * stateChangeTime
+    * commandKey
+    * caller
+    * elementType
+    * result
+    * durantion
+    * contextId
+    * executer
+    * treepath
+* events
+  * attrs
+    * uid
+    * isActive
+    * lastChangeTime
+    * description
+    * arguments
+    * severity
+    * treepath
 
 ## MQTT Example
 
 In our project, we have the following structure
 
-* **High_Volume_Milling_cell** (PC)
-  * **UN_utilities** (UN)
-    * *attrs = bleedAirStatus|5.51|dustExtracctionStatus|6.26|dustExtractionPower|1.40*
-  * **UN_machining** (UN)
-    * *attrs = g|4*
-    * **Milling_Equipment** (EM)
-      * *attrs = em_milling|1*
-      * **Spindle_Controller** (CM)
-        * *attrs = r|10*
+### PackML
+
+* **Testmachine_cell** (Process Cell)
+
+```json
+PackML/Testmachine_Cell/attrs
+```
+
+```json
+{
+  "oldMode": 1,
+  "newMode": 1,
+  "modeChangeTime": "2021-11-23T19:55:23.257Z",
+  "oldname": "Production",
+  "newname": "Production",
+  "treepath": ""
+}
+```
+
+* **Apple_juice_mixer** (Unit)
+
+```json
+PackML/Apple_juice_mixer/attrs
+```
+
+```json
+{
+  "oldstate": 10,
+  "newstate": 11,
+  "stateChangeTime": "2021-11-23T19:43:19.176Z",
+  "oldname": "Holding",
+  "newname": "Held",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer"
+}
+```
+
+* **Apple_juice_mixing_tank** (Equipment Module)
+
+```json
+PackML/Apple_juice_mixing_tank/attrs
+```
+
+```json
+{
+  "oldstate": 10,
+  "newstate": 11,
+  "stateChangeTime": "2021-11-23T19:43:19.175Z",
+  "oldname": "Holding",
+  "newname": "Held",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank"
+}
+```
+
+* **Apple_juice_mixing_agitator** (Control Module)
+
+```json
+PackML/Apple_juice_mixing_agitator/attrs
+```
+
+```json
+{
+  "oldstate": 10,
+  "newstate": 11,
+  "stateChangeTime": "2021-11-23T19:43:19.174Z",
+  "oldname": "Holding",
+  "newname": "Held",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator"
+}
+```
+
+### telemetry
+
+```json
+telemetry/Apple_juice_mixing_tank/attrs
+```
+
+```json
+{
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank",
+  "DateTime": "2021-11-23T20:03:01.048Z",
+  "name": "temperature",
+  "unit": "deg C",
+  "schema": "int",
+  "value": "36.2869306477454"
+}
+```
+
+### commands
+
+```json
+commands/Enable/attrs
+```
+
+```json
+{
+  "commandState": "Completed",
+  "stateChangeTime": "2021-11-23T19:43:14.110Z",
+  "commandKey": "Enable",
+  "caller": "Mixed_apple_juice_transfer_valve",
+  "elementType": "Command",
+  "result": 2147483647,
+  "duration": 53,
+  "contextId": "2021-11-23-19:42:10.032_9",
+  "executer": "Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve",
+  "treepath": ""
+}
+```
+
+### ProceduralElements
+
+```json
+ProceduralElements/Cool_apple_juice_phase/attrs
+```
+
+```json
+{
+  "commandState": "Completed",
+  "stateChangeTime": "2021-11-23T19:42:37.981Z",
+  "commandKey": "Cool_apple_juice_phase",
+  "caller": "Apple_juice_mixing_tank",
+  "elementType": "Phase",
+  "result": 2147483647,
+  "duration": 0,
+  "contextId": "2021-11-23-19:42:10.032_9",
+  "executer": "",
+  "treepath": "Brix_Tc3_App_JBFDemonstrator.JBF_Demonstrator.MAIN._controller._phCoolAppleJuice[0]/Cool_apple_juice_phase"
+}
+```
+
+### events
+
+```json
+events/Vitamine_C_feeder_tank/attrs
+```
+
+```json
+
+{
+  "uid": -12334,
+  "isActive": true,
+  "lastChangeTime": "2021-11-23T19:42:43.100Z",
+  "description": "test event {0} {1} {2} {3}",
+  "severity": 1,
+  "treePath": "Brix_Tc3_App_JBFDemonstrator.JBF_Demonstrator.MAIN._controller._emVitamineCFeeder/Vitamine_C_feeder_tank"
+}
+```
 
 In an application as MQTT Explorer it shows as follows:
 

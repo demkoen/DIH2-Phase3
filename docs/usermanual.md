@@ -47,7 +47,7 @@ When the connection is made, this application shows and monitors the sent messag
 |----------------------------------------------------------------------------------------|
 |use [reqbin.com/curl](https://reqbin.com/curl) for in browser curl commands and feedback or an application like Postman|
 
-To check the devices that are registerd in the IoT agent you need to know the registered service. In our example project, the fiware-service is ```_units```
+To check the devices that are registerd in the IoT agent you need to know the registered service. In our example project, the fiware-service is ```packmlService``` and the servicepath is ```/packmlStates```.
 
 ![check registered devices](images/reqbin_com_curl.png)
 
@@ -55,9 +55,9 @@ example code:
 
 ```curl
 curl -X GET \
-'http://10.11.118.60:4041/iot/devices' \
--H 'fiware-service: _units' \
--H 'fiware-servicepath: /'
+'http://192.168.178.101:4041/iot/devices' \
+-H 'fiware-service: packmlService' \
+-H 'fiware-servicepath: /packmlStates'
 ```
 
 Please refer to the [Fiware IoT Agent documentation](https://github.com/FIWARE/tutorials.IoT-Agent) for other commands
@@ -76,7 +76,8 @@ Example query
 
 ```sql
 SELECT *
-FROM "mt_units"."etun_machining"
+FROM "mtpackmlservice"."etpackmlstates"
+Order by time_index DESC
 LIMIT 100;
 ```
 

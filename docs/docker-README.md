@@ -1,6 +1,4 @@
-# DIH² Phase 3
-
-## Contents
+# Contents
 
 - [Preparations](#Preparations)
   - [Environment variables](#environment-variables)
@@ -37,7 +35,7 @@ TUTORIAL_APP_PORT=3000
 TUTORIAL_DUMMY_DEVICE_PORT=3001
 ```
 
-An example of the .ENV file can be found at [docker/.env](docker/.env).
+An example of the .ENV file can be found at [docker/.env](https://github.com/demkoen/DIH2-Phase3/tree/main/docs/docker/.env).
 
 [Top](#top)
 
@@ -45,7 +43,7 @@ An example of the .ENV file can be found at [docker/.env](docker/.env).
 
 Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. To learn more about all the features of Compose, [see the list of features](https://docs.docker.com/compose/#features).
 
-An example of the docker compose file can be found at [docker/docker-compose.yml](docker/docker-compose.yml).
+An example of the docker compose file can be found at [docker/docker-compose.yml](https://github.com/demkoen/DIH2-Phase3/tree/main/docs/docker/docker-compose.yml).
 
 ```Dockerfile
 version: "3.5"
