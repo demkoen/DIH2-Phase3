@@ -36,12 +36,7 @@ services:
       test: curl --fail -s http://orion:${ORION_PORT}/version || exit 1
       interval: 5s
 
-  # IoT-Agent is configured for the UltraLight Protocol
-  # 
-  # This deliberately fixed to v1.7.0
-  # see: https://github.com/telefonicaid/iotagent-ul/issues/320
-  #
-  # For v1.8 and v1.9 a dummy resource must be added when provisioning
+  # IoT-Agent is configured for the JSON Protocol
   # 
 
   iot-agent:
@@ -76,7 +71,6 @@ services:
     healthcheck:
       interval: 5s
 
-
   # Tutorial acts as a series of dummy IoT Sensors over HTTP
   tutorial:
     image: fiware/tutorials.context-provider
@@ -110,8 +104,6 @@ services:
       - "OPENWEATHERMAP_KEY_ID=<ADD_YOUR_KEY_ID>"
       - "TWITTER_CONSUMER_KEY=<ADD_YOUR_CONSUMER_KEY>"
       - "TWITTER_CONSUMER_SECRET=<ADD_YOUR_CONSUMER_SECRET>"
-
-
 
   # Database
   mongo-db:
