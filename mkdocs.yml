@@ -1,0 +1,18 @@
+site_name: MQTT-based PackML IoT Agent
+site_url: https://github.com/demkoen/DIH2-Phase3
+repo_url: https://github.com/demkoen/DIH2-Phase3
+site_description: MQTT-based PackML IoT Agent Documentation
+docs_dir: docs
+site_dir: html
+markdown_extensions: [toc,fenced_code]
+use_directory_urls: false
+theme: readthedocs
+nav:
+  - Home: 'README.md'
+  - Step by Step: 'step_by_step_tutorial.md'
+  - User & Programmers Manual:
+    - 'Architecture' : 'architecture.md'
+    - 'User Guide': 'usermanual.md'
+    - 'API' : 'api.md'
+  - 'Installation & Administration Manual':
+    - 'Installation Guide': 'installationguide.md'
