@@ -11,6 +11,9 @@
 This project is part of [DIH^2](http://www.dih-squared.eu/). For more information check the RAMP Catalogue entry for the
 [components](https://github.com/xxx).
 
+| :books: [Documentation](https://readthedocs.org/projects/dih2-phase3/badge/?version=latest) | :tv: [Step by Step](https://www.youtube.com/watch?v=DzSdRAGg3oM) |
+| --------------------------------------------- | ------------------------------------------------------------- |
+
 ## Contents
 
 - [Background](#background)
