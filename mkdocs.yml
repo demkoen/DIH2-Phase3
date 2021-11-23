@@ -5,11 +5,12 @@ site_description: MQTT-based PackML IoT Agent Documentation
 docs_dir: docs
 site_dir: html
 markdown_extensions: [toc,fenced_code]
-use_directory_urls: false
+use_directory_urls: true
 theme: readthedocs
 nav:
   - Home: 'README.md'
   - Step by Step: 'step_by_step_tutorial.md'
+    - 'Docker configuration' : 'docker-README.md'
   - User & Programmers Manual:
     - 'Architecture' : 'architecture.md'
     - 'User Guide': 'usermanual.md'
