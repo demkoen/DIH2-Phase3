@@ -9,7 +9,8 @@ use_directory_urls: true
 theme: readthedocs
 nav:
   - Home: 'README.md'
-  - Step by Step: 'step_by_step_tutorial.md'
+  - Step by Step: 
+    - 'Tutorial' : 'step_by_step_tutorial.md'
     - 'Docker configuration' : 'docker-README.md'
   - User & Programmers Manual:
     - 'Architecture' : 'architecture.md'
