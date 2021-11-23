@@ -3,12 +3,12 @@
 A general schematic of the (software) architecture can be seen below:
 
 <p align="center">
-    <img src="../images/TC_HMI_Fiware_Architecture.png" title="Architecture" alt="Architecture" width=90%">
+    <img src="images/TC_HMI_Fiware_Architecture.png" title="Architecture" alt="Architecture" width=90%">
 </p>
 
 spacer text
 
-![Architecture](../images/TC_HMI_Fiware_Architecture.png)
+![Architecture](images/TC_HMI_Fiware_Architecture.png)
 
 ## Hardware
 
