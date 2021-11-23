@@ -24,7 +24,7 @@ Once docker has been correctly installed you can continue with the other steps
 
 ## Step 1
 
-First of all, prepare your machine for running the docker containers. This is explained in the [docker readme](README.md) file in the docker folder.
+First of all, prepare your machine for running the docker containers. This is explained in the [docker readme](docker-README.md) file in the docker folder.
 
 ## Step 2
 

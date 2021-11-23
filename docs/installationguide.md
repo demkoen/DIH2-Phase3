@@ -27,7 +27,7 @@ This manual describes how to configure and start a server via a docker-compose f
 
 ## Preparations
 
-Make sure the docker containers are started and configured correctly. For more information refer to the [Docker README.md](../docker/README.md) file.
+Make sure the docker containers are started and configured correctly. For more information refer to the [Docker README.md](docker/docker-README.md) file.
 
 [Top](#top)
 

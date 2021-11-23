@@ -30,7 +30,7 @@ A production environment naturally includes many physical elements, valves, pump
 * Equipment Module – A collection of control modules that perform a task, fill, cool, and mix.
 * Control Module – A valve, pump, motor.
 
-![Physical Model](/images/ISA88_SummarySmall.png)
+![Physical Model](images/ISA88_SummarySmall.png)
 
 The Physical Model is what we want to show in our online representation in Grafana (Digital Twin) and is made available via MQTT
 
@@ -42,21 +42,31 @@ Besides the PackML states of the physical model and the Elements of the Procedur
 
 [PackML schema.json]
 
+[Example configuration shell script](configuration/Juicer_Startup_PackML_configuration.sh)
+
 ### Providing the Procedural Elements
 
 [Procedural Elements schema.json]
+
+[Example configuration shell script](configuration/Juicer_Startup_proceduralElements_configuration.sh)
 
 ### Providing the telemetry data
 
 [Telemetry schema.json]
 
+[Example configuration shell script](configuration/Juicer_Startup_telemetry_configuration.sh)
+
 ### Providing command data
 
 [Commands schema.json]
 
+[Example configuration shell script](configuration/Juicer_Startup_Commands_configuration.sh)
+
 ### Providing the event data
 
 [Events schema.json]
+
+[Example configuration shell script](configuration/Juicer_Startup_events_configuration.sh)
 
 [Top](#top)
 
@@ -124,13 +134,13 @@ In our project, we have the following structure
 
 In an application as MQTT Explorer it shows as follows:
 
-![MQTT Explorer](/images/mqtt_explorer.png)
+![MQTT Explorer](images/mqtt_explorer.png)
 
 [ISA 88]: https://iautomation.nl/techniek/automatiseringstechniek/isa-88/?lang=en "ISA S88"
 [UltraLight 2.0]: https://fiware-iotagent-ul.readthedocs.io/en/latest/usermanual/index.html#user-programmers-manual "Ultralight 2.0 Protocol"
 [MQTT Explorer]: http://mqtt-explorer.com/ "MQTT Explorer"
-[PackML schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/PackML/schema.json "PackML schema.json"
-[Procedural Elements schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/ProceduralElements/schema.json "Procedural Elements schema.json"
-[Telemetry schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/Telemetry/schema.json "Telemetry schema.json"
-[Commands schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/Commands/schema.json "Commands schema.json"
-[Events schema.json]: https://github.com/demkoen/DIH2-Phase3/blob/main/configuration/Events/schema.json "Events schema.json"
+[PackML schema.json]: configuration/PackML/schema.json "PackML schema.json"
+[Procedural Elements schema.json]: configuration/ProceduralElements/schema.json "Procedural Elements schema.json"
+[Telemetry schema.json]: configuration/Telemetry/schema.json "Telemetry schema.json"
+[Commands schema.json]: configuration/Commands/schema.json "Commands schema.json"
+[Events schema.json]: configuration/Events/schema.json "Events schema.json"
