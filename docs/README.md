@@ -57,7 +57,7 @@ Follow the [Step by step tutorial](docs/step_by_step_tutorial.md) to help settin
 Information about how to install (sub)components can be found at the corresponding section of the
 [Installation & Administration Guide](docs/installationguide.md).
 
-A `docker-compose` file is also available for your use - further information can be found [here](docker/README.md)
+A `docker-compose` file is also available for your use - further information can be found [here](docker-README.md)
 
 ## Usage
 

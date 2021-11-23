@@ -27,7 +27,7 @@ MQTT Explorer is a comprehensive and easy-to-use MQTT Client.
 
 When the application is started, the following screen appears:
 
-![Add new dashboard](../images/MQTT_Explorer_connections.png)
+![Add new dashboard](images/MQTT_Explorer_connections.png)
 
 Enter the ```hostname``` or ```Ip address``` of the machine that is running the docker containers. (It can be localhost if you are running this on the machine itself)
 
@@ -35,7 +35,7 @@ Enter the ```hostname``` or ```Ip address``` of the machine that is running the 
 
 When the connection is made, this application shows and monitors the sent messages from and to the broker, as shown in the following screenshot
 
-![Add new dashboard](../images/MQTT_Explorer_messages_v2.png)
+![Add new dashboard](images/MQTT_Explorer_messages_v2.png)
 
 [Top](#top)
 
@@ -49,7 +49,7 @@ When the connection is made, this application shows and monitors the sent messag
 
 To check the devices that are registerd in the IoT agent you need to know the registered service. In our example project, the fiware-service is ```_units```
 
-![check registered devices](../images/reqbin_com_curl.png)
+![check registered devices](images/reqbin_com_curl.png)
 
 example code:
 
@@ -68,9 +68,9 @@ Please refer to the [Fiware IoT Agent documentation](https://github.com/FIWARE/t
 
 CrateDB has a webinterface that can be used for debugging and to check if the database(s) and table(s) are made.
 
-![check registered devices](../images/cratedb_tables.png)
+![check registered devices](images/cratedb_tables.png)
 
-![check registered devices](../images/cratedb_query.png)
+![check registered devices](images/cratedb_query.png)
 
 Example query
 
