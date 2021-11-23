@@ -28,9 +28,9 @@ The HMI of the machine should get complete control over the machine. It allows t
 
 Via an External Interface, it's only allowed to 'read' machine properties. So we can only see the current temperatur, place of the actuator if the lights are on or off, and what the machine is mixing. We can't start the mixing procedure, or recipe values via an external interface. This is only allowed via an HMI.
 
-This project focusses completely on the external interface of the SMB. The SMB shares information via MQTT to an IoT Agent and shares the data in it's own MongoDB database. A Grafana dashboard connects to this and can retreive the historical data from the MongoDB Database. 
+This project focusses completely on the external interface of the SMB. The SMB shares information via MQTT to an IoT Agent and shares the data in it's own MongoDB database. A Grafana dashboard connects to this and can retreive the historical data from the MongoDB Database.
 
-![iot Agent](/images/iot_agent_context_broker.png)
+![iot Agent](images/iot_agent_context_broker.png)
 
 For more information see the [IoT Agent docs]
 
