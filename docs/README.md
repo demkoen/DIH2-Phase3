@@ -1,13 +1,13 @@
 # DIH² Phase 3
 
-[![License: MIT](https://img.shields.io/github/license/ramp-eu/TTE.project1.svg)](https://opensource.org/licenses/MIT)
-[![Docker badge](https://img.shields.io/docker/pulls/ramp-eu/TTE.project1.svg)](https://hub.docker.com/r/<org>/<repo>/)
-<br/>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Documentation Status](https://readthedocs.org/projects/dih2-phase3/badge/?version=latest)](https://dih2-phase3.readthedocs.io/en/latest/?badge=latest)
 [![CI](https://github.com/ramp-eu/TTE.project1/workflows/CI/badge.svg)](https://github.com/ramp-eu/TTE.project1/actions?query=workflow%3ACI)
-[![Coverage Status](https://coveralls.io/repos/github/ramp-eu/TTE.project1/badge.svg?branch=master)](https://coveralls.io/github/ramp-eu/TTE.project1?branch=master)
-[![Codacy grade](https://img.shields.io/codacy/grade/99310c5c4332439197633912a99d2e3c)](https://app.codacy.com/manual/jason-fox/TTE.project1)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4187/badge)](https://bestpractices.coreinfrastructure.org/projects/4187)
+[![Coverage Status](https://coveralls.io/repos/github/demkoen/DIH2-Phase3/badge.svg?branch=main)](https://coveralls.io/github/demkoen/DIH2-Phase3?branch=main)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f35cba565a1f4dc0a2fc4f8e4f8a1e72)](https://www.codacy.com/gh/demkoen/DIH2-Phase3/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;ytm_content=demkoen/DIH2-Phase3&amp;utm_campaign=Badge_Grade)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5399/badge)](https://bestpractices.coreinfrastructure.org/projects/5399)
+[![NGSI v2](https://img.shields.io/badge/NGSI-v2-5dc0cf.svg)](https://fiware-ges.github.io/orion/api/v2/stable/)
+[![Support badge](https://nexus.lab.fiware.org/repository/raw/public/badges/stackoverflow/fiware.svg)](https://stackoverflow.com/questions/tagged/fiware)
 
 ```text
 
@@ -52,10 +52,10 @@ A Smart Machine Base (SMB) was developed by Demcon, consisting of a generic mach
 
 How to install the component
 
-Follow the [Step by step tutorial](docs/step_by_step_tutorial.md) to help setting up and configuring the server.
+Follow the [Step by step tutorial](step_by_step_tutorial.md) to help setting up and configuring the server.
 
 Information about how to install (sub)components can be found at the corresponding section of the
-[Installation & Administration Guide](docs/installationguide.md).
+[Installation & Administration Guide](installationguide.md).
 
 A `docker-compose` file is also available for your use - further information can be found [here](docker-README.md)
 
@@ -63,17 +63,17 @@ A `docker-compose` file is also available for your use - further information can
 
 How to use the component
 
-Information about how to use the component can be found in the [User & Programmers Manual](docs/usermanual.md).
+Information about how to use the component can be found in the [User & Programmers Manual](usermanual.md).
 
 ## API
 
-Information about the API can be found in the [API documentation](docs/api.md).
+Information about the API can be found in the [API documentation](api.md).
 
 ## Testing
 
 How to test the component
 
-For performing a basic end-to-end test, you have to follow the step below. A detailed description about how to run tests can be found in the [User & Programmers Manual](docs/usermanual.md).
+For performing a basic end-to-end test, you have to follow the step below. A detailed description about how to run tests can be found in the [User & Programmers Manual](usermanual.md).
 
 ## License
 

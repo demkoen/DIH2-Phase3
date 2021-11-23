@@ -155,7 +155,7 @@ See also the [Video of setting up Grafana]
 ### Add the datasources to Grafana
 
 1. Go to the 'Configuration - cogwheel' in the vertical menu on the right, and select ```Data sources```.
-![Add new datasource](/images/grafana_1.png)
+![Add new datasource](images/grafana_1.png)
 
 2. Press the blue button ```Add data source```.
 3. Select PostgreSQL.
@@ -165,14 +165,14 @@ See also the [Video of setting up Grafana]
    - User should be crate without an password
    - Disable the TLS/SSL Mode
 5. Save & test the connection
-![Configure ](/images/grafana_2.png)
+![Configure ](images/grafana_2.png)
 
 [Top](#top)
 
 ### Creating a new dashboard
 
 To create a new dashboard, click on the vertical menu.
-![Add new dashboard](/images/grafana_3.png)
+![Add new dashboard](images/grafana_3.png)
 
 To show the data, we've made the following SQL-Query:
 
@@ -190,7 +190,7 @@ ORDER BY 1
 
 We show the time of the values, show the ```entity_id``` as parent so we can rebuild our digital Twin and show the source of the values shown. Because we saved the values as Text in [Configuring IoT Agent with multiple variables](#configuring-iot-agent-with-multiple-variables) We have to cast the values as ```FLOAT``` to make them numeric
 
-![Visualize the data](/images/grafana_4.png)
+![Visualize the data](images/grafana_4.png)
 
 [Top](#top)
 
@@ -200,9 +200,9 @@ The final goal should be to generate the Grafana dashboard by an external progra
 
 1. Click on the ```+``` sign in the vertical menu
 2. And select ```Import``` in the submenu
-![Import](/images/grafana_5.png)
+![Import](images/grafana_5.png)
 3. Select the json file you've generated and click ```Import```
-![Import](/images/grafana_6.png)
+![Import](images/grafana_6.png)
 4. Your dashboard is imported.
 
 [Top](#top)
