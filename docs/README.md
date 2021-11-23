@@ -1,4 +1,4 @@
-# MQTT based PackML IoT Agent
+# Demcon SMB ROSE-AP
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Documentation Status](https://readthedocs.org/projects/dih2-phase3/badge/?version=latest)](https://dih2-phase3.readthedocs.io/en/latest/?badge=latest)
