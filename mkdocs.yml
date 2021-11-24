@@ -1,7 +1,7 @@
-site_name: MQTT-based PackML IoT Agent
+site_name: Demcon SMB ROSE-AP
 site_url: https://github.com/demkoen/DIH2-Phase3
 repo_url: https://github.com/demkoen/DIH2-Phase3
-site_description: MQTT-based PackML IoT Agent Documentation
+site_description: Demcon SMB ROSE-AP Documentation
 docs_dir: docs
 site_dir: html
 markdown_extensions: [toc,fenced_code]
@@ -13,8 +13,9 @@ nav:
     - 'Tutorial' : 'step_by_step_tutorial.md'
     - 'Docker configuration' : 'docker-README.md'
   - User & Programmers Manual:
-    - 'Architecture' : 'architecture.md'
     - 'User Guide': 'usermanual.md'
+    - 'Architecture' : 'architecture.md'
     - 'API' : 'api.md'
   - 'Installation & Administration Manual':
     - 'Installation Guide': 'installationguide.md'
+  - How to Contribute: 'CONTRIBUTING.md'
