@@ -40,33 +40,33 @@ Besides the PackML states of the physical model and the Elements of the Procedur
 
 ### Providing the PackML states
 
-[PackML schema.json]
+For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_PackML_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
-[Example configuration shell script](configuration/Juicer_Startup_PackML_configuration.sh)
+You can find the description of the datamodel in the [PackML schema.json]
 
 ### Providing the Procedural Elements
 
-[Procedural Elements schema.json]
+[Example configuration shell script](configuration/Juicer_Startup_proceduralElements_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
-[Example configuration shell script](configuration/Juicer_Startup_proceduralElements_configuration.sh)
+You can find the description of the datamodel in the [Procedural Elements schema.json]
 
 ### Providing the telemetry data
 
-[Telemetry schema.json]
+For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_telemetry_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
-[Example configuration shell script](configuration/Juicer_Startup_telemetry_configuration.sh)
+You can find the description of the datamodel in the [Telemetry schema.json]
 
 ### Providing command data
 
-[Commands schema.json]
+For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_Commands_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
-[Example configuration shell script](configuration/Juicer_Startup_Commands_configuration.sh)
+You can find the description of the datamodel in the [Commands schema.json]
 
 ### Providing the event data
 
-[Events schema.json]
+For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_events_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
-[Example configuration shell script](configuration/Juicer_Startup_events_configuration.sh)
+You can find the description of the datamodel in the [Events schema.json]
 
 [Top](#top)
 
