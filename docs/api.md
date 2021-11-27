@@ -320,7 +320,7 @@ Telemetry/Enable/attrs
 }
 ```
 
-* **Enable** (Event)
+* **Apple_juice_feeeder_pump** (Event)
 
 ```json
 Telemetry/Apple_juice_feeeder_pump/attrs
@@ -339,21 +339,9 @@ Telemetry/Apple_juice_feeeder_pump/attrs
 }
 ```
 
-### Providing command data
-
-For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_Commands_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
-
-You can find the description of the datamodel in the [Commands schema.json]
-
-### Providing the event data
-
-For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_events_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
-
-You can find the description of the datamodel in the [Events schema.json]
-
 [Top](#top)
 
-## MQTT Example
+## MQTT Explorer Example
 
 In an application as MQTT Explorer it shows as follows:
 
@@ -365,5 +353,3 @@ In an application as MQTT Explorer it shows as follows:
 [PackML schema.json]: configuration/PackML/schema.json "PackML schema.json"
 [Procedural Elements schema.json]: configuration/ProceduralElements/schema.json "Procedural Elements schema.json"
 [Telemetry schema.json]: configuration/Telemetry/schema.json "Telemetry schema.json"
-[Commands schema.json]: configuration/Commands/schema.json "Commands schema.json"
-[Events schema.json]: configuration/Events/schema.json "Events schema.json"

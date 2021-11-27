@@ -11,9 +11,6 @@
             "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
         },
         {
-            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
-        },
-        {
             "properties": {
                 "type": {
                     "type": "string",
@@ -41,8 +38,12 @@
 				"description": "Property. Model:'https://schema.org/Text'. Name of the unit that called this command"
 			},
             "elementType": {
+				"type": "number",
+                "description": "Property. Model:'http://schema.org/Number'. Numeric value of the elementType"
+			},
+            "elementTypeName": {
 				"type": "string",
-				"description": "Property. Model:'https://schema.org/Text'. Type of the element"
+				"description": "Property. Model:'https://schema.org/Text'. Name of the elementType"
 			},
             "result": {
 				"type": "number",
