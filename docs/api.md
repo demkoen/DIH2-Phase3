@@ -23,8 +23,8 @@ The procedural model works together with the physical model to model the factory
 
 A production environment naturally includes many physical elements, valves, pumps, tanks, coolers and mixers, for example. These elements are brought together in a physical model so that more complex elements can be built up from basic elements (control modules). Bringing together these control modules, for example, creates a tank with a function. This tank can then serve as the basis (template) for the following equal tanks. In this way, only 1 complex element needs to be designed and described. The entire structure of the physical model is as follows:
 
-* Site – A factory site, for example, production location Y.
-* Area – Part of a site where a process cell can be located, building X.
+* Site – A factory site, for example, production location Y. (Not used is this model, We only have information about the machine)
+* Area – Part of a site where a process cell can be located, building X. (Not used is this model, We only have information about the machine)
 * Process Cell – Part of a factory with different Units
 * Unit – A part of a factory where a certain product undergoes a change.
 * Equipment Module – A collection of control modules that perform a task, fill, cool, and mix.
@@ -38,23 +38,306 @@ The Physical Model is what we want to show in our online representation in Grafa
 
 Besides the PackML states of the physical model and the Elements of the Procedural model, we've chosen to also define telemetry, command and event data of the SMB. How this data is setup is declared as follows
 
-### Providing the PackML states
+### Providing the Physical Elements
 
-For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_PackML_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
+For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_PhysicalElements_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
 You can find the description of the datamodel in the [PackML schema.json]
 
+#### MQTT Topic PhysicalElements
+
+* PhysicalElements
+  * attrs
+    * oldstate
+    * newstate
+    * stateChangeTime
+    * oldname
+    * newname
+    * treepath
+
+#### MQTT PhysicalElements Example
+
+* **Testmachine_cell** (Process Cell)
+
+```json
+PhysicalElements/Testmachine_Cell/attrs
+```
+
+```json
+{
+  "oldstate": 6,
+  "newstate": 6,
+  "stateChangeTime": "2021-11-27T16:13:34.356Z",
+  "oldname": "Execute",
+  "newname": "Execute",
+  "elementType": 1,
+  "elementTypeName": "ProcessCell",
+  "treepath": "Testmachine_Cell"
+}
+```
+
+* **Apple_juice_mixer** (Unit)
+
+```json
+PhysicalElements/Apple_juice_mixer/attrs
+```
+
+```json
+{
+  "oldstate": 3,
+  "newstate": 6,
+  "stateChangeTime": "2021-11-27T14:36:20.013Z",
+  "oldname": "Starting",
+  "newname": "Execute",
+  "elementType": 2,
+  "elementTypeName": "Unit",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer"
+}
+```
+
+* **Apple_juice_mixing_tank** (Equipment Module)
+
+```json
+PhysicalElements/Apple_juice_mixing_tank/attrs
+```
+
+```json
+{
+  "oldstate": 3,
+  "newstate": 6,
+  "stateChangeTime": "2021-11-27T14:36:20.013Z",
+  "oldname": "Starting",
+  "newname": "Execute",
+  "elementType": 3,
+  "elementTypeName": "EquipmentModule",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank"
+}
+```
+
+* **Apple_juice_mixing_agitator** (Control Module)
+
+```json
+PhysicalElements/Apple_juice_mixing_agitator/attrs
+```
+
+```json
+{
+  "oldstate": 3,
+  "newstate": 6,
+  "stateChangeTime": "2021-11-27T14:36:20.011Z",
+  "oldname": "Starting",
+  "newname": "Execute",
+  "elementType": 4,
+  "elementTypeName": "ControlModule",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator"
+}
+```
+
 ### Providing the Procedural Elements
 
-[Example configuration shell script](configuration/Juicer_Startup_proceduralElements_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
+[Example configuration shell script](configuration/Juicer_Startup_ProceduralElements_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
 You can find the description of the datamodel in the [Procedural Elements schema.json]
 
+#### MQTT Topic ProceduralElements
+
+* ProceduralElements
+  * attrs
+    * commandSTate
+    * stateChangeTime
+    * commandKey
+    * caller
+    * elementType
+    * result
+    * durantion
+    * contextId
+    * executer
+    * treepath
+
+#### MQTT ProceduralElements Example
+
+* **Apple juice procedure** (Procedure)
+
+```json
+ProceduralElements/Apple juice procedure/attrs
+```
+
+```json
+{
+  "commandState": "execute",
+  "stateChangeTime": "2021-11-27T16:17:15.789Z",
+  "commandKey": "Apple juice procedure",
+  "caller": "Testmachine_Cell",
+  "elementType": 4,
+  "elementTypeName": "procedure",
+  "result": 0,
+  "duration": 0,
+  "contextId": "2021-11-27-16:17:15.789_84",
+  "executer": "Testmachine_Cell",
+  "treepath": "Testmachine_Cell"
+}
+```
+
+* **Apple_Juice_mixing_unit_procedure** (Unit Procedure)
+
+```json
+ProceduralElements/Apple_Juice_mixing_unit_procedure/attrs
+```
+
+```json
+{
+  "commandState": "Completed",
+  "stateChangeTime": "2021-11-27T16:19:01.499Z",
+  "commandKey": "Apple_Juice_mixing_unit_procedure",
+  "caller": "Apple_juice_mixer",
+  "elementType": 5,
+  "elementTypeName": "unitProcedure",
+  "result": 2147483647,
+  "duration": 0,
+  "contextId": "2021-11-27-16:18:26.933_85",
+  "executer": "Apple_juice_mixer",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer"
+}
+```
+
+* **Apple_juice_feed_operation** (Operation)
+
+```json
+ProceduralElements/Apple_juice_feed_operation/attrs
+```
+
+```json
+{
+  "commandState": "Completed",
+  "stateChangeTime": "2021-11-27T16:19:48.125Z",
+  "commandKey": "Apple_juice_feed_operation",
+  "caller": "Apple_juice_mixer",
+  "elementType": 6,
+  "elementTypeName": "operation",
+  "result": 2147483647,
+  "duration": 0,
+  "contextId": "2021-11-27-16:19:39.075_86",
+  "executer": "Apple_juice_mixer",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer"
+}
+```
+
+* **Feed_sugar_solution_phase** (Phase)
+
+```json
+ProceduralElements/Feed_sugar_solution_phase/attrs
+```
+
+```json
+{
+  "commandState": "Completed",
+  "stateChangeTime": "2021-11-27T16:19:41.107Z",
+  "commandKey": "Feed_sugar_solution_phase",
+  "caller": "Sugar_solution_tank",
+  "elementType": 7,
+  "elementTypeName": "phase",
+  "result": 2147483647,
+  "duration": 0,
+  "contextId": "2021-11-27-16:19:39.075_86",
+  "executer": "Sugar_solution_tank",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank"
+}
+```
+
 ### Providing the telemetry data
 
-For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_telemetry_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
+For the Apple Juice (example) factory, We've made an [Example configuration shell script](configuration/Juicer_Startup_Telemetry_configuration.sh) that configures the IoT Agent and Context Broker. It's advisable to generate these files from/for your own project.
 
 You can find the description of the datamodel in the [Telemetry schema.json]
+
+#### MQTT Topic Telemetry
+
+* telemetry
+  * attrs
+    * name
+    * unit
+    * schema
+    * value
+    * DateTime
+    * treepath
+    * commandSTate
+    * stateChangeTime
+    * commandKey
+    * caller
+    * elementType
+    * result
+    * durantion
+    * contextId
+    * executer
+    * uid
+    * isActive
+    * lastChangeTime
+    * description
+    * arguments
+    * severity
+
+#### MQTT Telemetry Example
+
+* **Apple_juice_mixing_tank** (Sensor)
+
+```json
+Telemetry/Apple_juice_mixing_tank/attrs
+```
+
+```json
+{
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank",
+  "DateTime": "2021-11-27T16:23:46.616Z",
+  "name": "temperature",
+  "unit": "deg C",
+  "schema": "float",
+  "value": "9.56783398184177",
+  "elementType": 3,
+  "elementTypeName": "sensor"
+}
+```
+
+* **Enable** (Command)
+
+```json
+Telemetry/Enable/attrs
+```
+
+```json
+
+{
+  "commandState": "Completed",
+  "stateChangeTime": "2021-11-27T16:24:38.212Z",
+  "commandKey": "Enable",
+  "caller": "Apple_juice_cooler",
+  "elementType": 1,
+  "elementTypeName": "command",
+  "result": 2147483647,
+  "duration": 5,
+  "contextId": "2021-11-27-16:24:29.154_90",
+  "executer": "Apple_juice_cooler",
+  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler"
+}
+```
+
+* **Enable** (Event)
+
+```json
+Telemetry/Apple_juice_feeeder_pump/attrs
+```
+
+```json
+{
+  "uid": -1019,
+  "elementType": 2,
+  "elementTypeName": "event",
+  "isActive": false,
+  "lastChangeTime": "2021-11-27T13:39:01.465Z",
+  "description": "Cannot clear module, module is in invalid state (must be aborted or stopped)",
+  "severity": 1,
+  "treePath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump"
+}
+```
 
 ### Providing command data
 
@@ -70,208 +353,7 @@ You can find the description of the datamodel in the [Events schema.json]
 
 [Top](#top)
 
-### MQTT Topics
-
-* PackML
-  * attrs
-    * oldstate
-    * newstate
-    * stateChangeTime
-    * oldname
-    * newname
-    * treepath
-* ProceduralElements
-  * attrs
-    * commandSTate
-    * stateChangeTime
-    * commandKey
-    * caller
-    * elementType
-    * result
-    * durantion
-    * contextId
-    * executer
-    * treepath
-* telemetry
-  * attrs
-    * name
-    * unit
-    * schema
-    * value
-    * DateTime
-    * treepath
-* commands
-  * attrs
-    * commandSTate
-    * stateChangeTime
-    * commandKey
-    * caller
-    * elementType
-    * result
-    * durantion
-    * contextId
-    * executer
-    * treepath
-* events
-  * attrs
-    * uid
-    * isActive
-    * lastChangeTime
-    * description
-    * arguments
-    * severity
-    * treepath
-
 ## MQTT Example
-
-In our project, we have the following structure
-
-### PackML
-
-* **Testmachine_cell** (Process Cell)
-
-```json
-PackML/Testmachine_Cell/attrs
-```
-
-```json
-{
-  "oldMode": 1,
-  "newMode": 1,
-  "modeChangeTime": "2021-11-23T19:55:23.257Z",
-  "oldname": "Production",
-  "newname": "Production",
-  "treepath": ""
-}
-```
-
-* **Apple_juice_mixer** (Unit)
-
-```json
-PackML/Apple_juice_mixer/attrs
-```
-
-```json
-{
-  "oldstate": 10,
-  "newstate": 11,
-  "stateChangeTime": "2021-11-23T19:43:19.176Z",
-  "oldname": "Holding",
-  "newname": "Held",
-  "treepath": "Testmachine_Cell/Apple_juice_mixer"
-}
-```
-
-* **Apple_juice_mixing_tank** (Equipment Module)
-
-```json
-PackML/Apple_juice_mixing_tank/attrs
-```
-
-```json
-{
-  "oldstate": 10,
-  "newstate": 11,
-  "stateChangeTime": "2021-11-23T19:43:19.175Z",
-  "oldname": "Holding",
-  "newname": "Held",
-  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank"
-}
-```
-
-* **Apple_juice_mixing_agitator** (Control Module)
-
-```json
-PackML/Apple_juice_mixing_agitator/attrs
-```
-
-```json
-{
-  "oldstate": 10,
-  "newstate": 11,
-  "stateChangeTime": "2021-11-23T19:43:19.174Z",
-  "oldname": "Holding",
-  "newname": "Held",
-  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator"
-}
-```
-
-### telemetry
-
-```json
-telemetry/Apple_juice_mixing_tank/attrs
-```
-
-```json
-{
-  "treepath": "Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank",
-  "DateTime": "2021-11-23T20:03:01.048Z",
-  "name": "temperature",
-  "unit": "deg C",
-  "schema": "int",
-  "value": "36.2869306477454"
-}
-```
-
-### commands
-
-```json
-commands/Enable/attrs
-```
-
-```json
-{
-  "commandState": "Completed",
-  "stateChangeTime": "2021-11-23T19:43:14.110Z",
-  "commandKey": "Enable",
-  "caller": "Mixed_apple_juice_transfer_valve",
-  "elementType": "Command",
-  "result": 2147483647,
-  "duration": 53,
-  "contextId": "2021-11-23-19:42:10.032_9",
-  "executer": "Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve",
-  "treepath": ""
-}
-```
-
-### ProceduralElements
-
-```json
-ProceduralElements/Cool_apple_juice_phase/attrs
-```
-
-```json
-{
-  "commandState": "Completed",
-  "stateChangeTime": "2021-11-23T19:42:37.981Z",
-  "commandKey": "Cool_apple_juice_phase",
-  "caller": "Apple_juice_mixing_tank",
-  "elementType": "Phase",
-  "result": 2147483647,
-  "duration": 0,
-  "contextId": "2021-11-23-19:42:10.032_9",
-  "executer": "",
-  "treepath": "Brix_Tc3_App_JBFDemonstrator.JBF_Demonstrator.MAIN._controller._phCoolAppleJuice[0]/Cool_apple_juice_phase"
-}
-```
-
-### events
-
-```json
-events/Vitamine_C_feeder_tank/attrs
-```
-
-```json
-
-{
-  "uid": -12334,
-  "isActive": true,
-  "lastChangeTime": "2021-11-23T19:42:43.100Z",
-  "description": "test event {0} {1} {2} {3}",
-  "severity": 1,
-  "treePath": "Brix_Tc3_App_JBFDemonstrator.JBF_Demonstrator.MAIN._controller._emVitamineCFeeder/Vitamine_C_feeder_tank"
-}
-```
 
 In an application as MQTT Explorer it shows as follows:
 
