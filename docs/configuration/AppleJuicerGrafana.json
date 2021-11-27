@@ -219,7 +219,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"PackML State\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell' AND statechangetime IS NOT NULL\nORDER BY statechangetime asc",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"PackML State\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell' AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "A",
           "select": [
             [
@@ -2900,10 +2900,35 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Executer"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 214
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 76
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 12,
         "x": 0,
         "y": 81
@@ -2911,7 +2936,13 @@
       "id": 38,
       "options": {
         "frameIndex": 1,
-        "showHeader": true
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Time"
+          }
+        ]
       },
       "pluginVersion": "8.2.2",
       "targets": [
@@ -2920,7 +2951,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM ettelemetryvalues\nORDER BY 1 DESC",
+          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM ettelemetryvalues\nWHERE elementtypename = 'command' AND commandstate IS NOT NULL\nORDER BY 1 DESC",
           "refId": "A",
           "select": [
             [
@@ -3002,7 +3033,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 89
+        "y": 87
       },
       "id": 40,
       "options": {
@@ -3053,7 +3084,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 97
+        "y": 95
       },
       "id": 30,
       "panels": [],
@@ -3117,7 +3148,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 98
+        "y": 96
       },
       "id": 32,
       "options": {
@@ -3221,7 +3252,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 106
+        "y": 104
       },
       "id": 34,
       "options": {
@@ -3303,7 +3334,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 114
+        "y": 112
       },
       "id": 44,
       "panels": [],
@@ -3342,7 +3373,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 115
+        "y": 113
       },
       "id": 2,
       "options": {
@@ -3396,5 +3427,5 @@
   "timezone": "",
   "title": "Apple Juice Factory",
   "uid": "zjohwi5nk",
-  "version": 10
+  "version": 5
 }
