@@ -4,12 +4,9 @@
 
 - [Docker](#docker)
 - [Preparations](#preparations)
-  - [Environment variables](#environment-variables)
-  - [ElasticSearch Map Count](#elasticsearch-map-count)
-- [Starting the Docker containers](#starting-the-docker-containers)
 - [Configuring fiware IoT Agent](#configuring-fiware-iot-agent)
+  - [Creating a new fiware-service](#Creating-a-new-fiware-service)
   - [Configuring the IoT Agent](#configuring-the-iot-agent)
-    - [Configuring IoT Agent with one variable](#configuring-iot-agent-with-one-variable)
     - [Configuring IoT Agent with multiple variables](#configuring-iot-agent-with-multiple-variables)
 - [Configuring the Orion Context Broker](#configuring-the-orion-context-broker)
 - [Configuring Grafana](#configuring-grafana)
@@ -55,15 +52,15 @@ If you remember our demo S88 project, we have data in our *Units*, *Equipment Mo
 curl -iX POST \
   'http://192.168.178.101:4041/iot/services' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: packmlService' \
-  -H 'fiware-servicepath: /packmlStates' \
+  -H 'fiware-service: PhysicialElementService' \
+  -H 'fiware-servicepath: /PhysicalElementsStates' \
   -d '{
  "services": [
    {
-     "apikey":      "PackML",
+     "apikey":      "PhysicalElements",
      "cbroker":     "http://orion:1026",
      "entity_type": "ProcessCell",
-     "resource":    "PackML/"
+     "resource":    "PhysicalElements/"
    }
  ]
 }'
@@ -77,20 +74,20 @@ In the following example, we configure the MQTT message ```High_Volume_Milling_C
 
 [Top](#top)
 
-#### Configuring PackML IoT Agent with multiple variables
+#### Configuring IoT Agent with multiple variables
 
 ```curl
 curl -iX POST \
   'http://192.168.178.101:4041/iot/devices' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: packmlService' \
-  -H 'fiware-servicepath: /packmlStates' \
+  -H 'fiware-service: PhysicialElementService' \
+  -H 'fiware-servicepath: /PhysicalElementsStates' \
   -d '{
  "devices": [
    {
      "device_id":   "Testmachine_Cell",
-     "entity_name": "PackML",
-     "entity_type": "PackMLStates",
+     "entity_name": "PhyscialElements",
+     "entity_type": "PhysicalElementsStates",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
@@ -99,6 +96,8 @@ curl -iX POST \
        { "object_id": "stateChangeTime", "name": "stateChangeTime", "type": "DateTime" },
        { "object_id": "oldname", "name": "oldname", "type": "Text" },
        { "object_id": "newname", "name": "newname", "type": "Text" },
+       { "object_id": "elementType", "name": "elementType", "type": "int" },
+       { "object_id": "elementTypeName", "name": "elementTypeName", "type": "Text" },
        { "object_id": "treepath", "name": "treepath", "type": "Text" }
      ]
    }
@@ -114,19 +113,19 @@ curl -iX POST \
 curl -iX POST \
   'http://192.168.178.101:1026/v2/subscriptions/' \
   -H 'Content-Type: application/json' \
-  -H 'fiware-service: packmlService' \
-  -H 'fiware-servicepath: /packmlStates' \
+  -H 'fiware-service: PhysicialElementService' \
+  -H 'fiware-servicepath: /PhysicalElementsStates' \
   -d '{
   "description": "plc_id",
   "subject": {
     "entities": [
       {
-        "idPattern": "PackML"
+        "idPattern": "PhyscialElements"
       }
     ],
     "condition": {
       "attrs": [
-        "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "treepath"
+        "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "elementType", "elementTypeName", "treepath"
       ]
     }
   },
@@ -135,12 +134,15 @@ curl -iX POST \
       "url": "http://quantumleap:8668/v2/notify"
     },
     "attrs": [
-      "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "treepath"
+      "oldstate", "newstate", "oldname", "newname", "stateChangeTime", "elementType", "elementTypeName", "treepath"
     ],
+    "onlyChangedAttrs":false,
     "metadata": ["dateCreated", "dateModified"]
   }
 }'
 ```
+
+To see an example of configuring a complete physical ISA S88 model, view the [Example configuration shell script](configuration/Juicer_Startup_PhysicalElements_configuration.sh) of the 'Apple juicer factory'.
 
 [Top](#top)
 
