@@ -94,7 +94,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT COUNT(caller)\nFROM etproceduralelementstates\nWHERE elementtype = 'Procedure' AND commandkey = 'Apple juice procedure' AND commandstate = 'Completed'",
+          "rawSql": "SELECT COUNT(caller)\nFROM etproceduralelementstates\nWHERE elementtypename = 'procedure' AND commandkey = 'Apple juice procedure' AND commandstate = 'Completed'",
           "refId": "A",
           "select": [
             [
@@ -120,7 +120,7 @@
       "type": "stat"
     },
     {
-      "datasource": "mtpackmlservice",
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -219,7 +219,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"PackML State\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell' AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"PackML State\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell' AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "A",
           "select": [
             [
@@ -245,7 +245,7 @@
       "type": "state-timeline"
     },
     {
-      "datasource": "mtpackmlservice",
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -344,7 +344,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer' AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer' AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY statechangetime ASC",
           "refId": "A",
           "select": [
             [
@@ -371,7 +371,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "B",
           "select": [
             [
@@ -398,7 +398,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder' AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder' AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "C",
           "select": [
             [
@@ -425,7 +425,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank' AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank' AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "D",
           "select": [
             [
@@ -452,7 +452,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "E",
           "select": [
             [
@@ -479,7 +479,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line' AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line' AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "F",
           "select": [
             [
@@ -506,7 +506,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeeder_pump'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "G",
           "select": [
             [
@@ -533,7 +533,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_feeder/Apple_juice_feeder_valve'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "H",
           "select": [
             [
@@ -560,7 +560,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_pump'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "I",
           "select": [
             [
@@ -587,7 +587,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Sugar_solution_tank/Sugar_solution_feeder_valve'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "J",
           "select": [
             [
@@ -614,7 +614,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_mixing_agitator'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "K",
           "select": [
             [
@@ -641,7 +641,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_mixing_tank/Apple_juice_cooler'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "L",
           "select": [
             [
@@ -668,7 +668,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Apple_juice_mixer/Apple_juice_transfer_line/Apple_juice_transfer_valve'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "M",
           "select": [
             [
@@ -695,7 +695,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "N",
           "select": [
             [
@@ -722,7 +722,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "O",
           "select": [
             [
@@ -749,7 +749,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "P",
           "select": [
             [
@@ -776,7 +776,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_pump'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "Q",
           "select": [
             [
@@ -803,7 +803,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_feeder_tank/Vitamine_C_valve'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "R",
           "select": [
             [
@@ -830,7 +830,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_c_mixing_agitator'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "S",
           "select": [
             [
@@ -857,7 +857,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Vitamine_C_mixing_tank/Vitamine_C_cooler'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "T",
           "select": [
             [
@@ -884,7 +884,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve\"\nFROM etpackmlstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve'AND statechangetime IS NOT NULL\nORDER BY 1",
+          "rawSql": "SELECT \n  statechangetime AS \"time\",\n  newname AS \"Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve\"\nFROM etphysicalelementsstates\nWHERE treepath = 'Testmachine_Cell/Vitamine_C_adder/Mixed_apple_juice_transfer_line/Mixed_apple_juice_transfer_valve'AND newname IS NOT NULL AND statechangetime IS NOT NULL\nORDER BY 1",
           "refId": "U",
           "select": [
             [
@@ -969,7 +969,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  statechangetime AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Procedure'\nORDER BY statechangetime DESC",
+          "rawSql": "SELECT\n  statechangetime AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'procedure'\nORDER BY statechangetime DESC",
           "refId": "A",
           "select": [
             [
@@ -1041,7 +1041,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Unit Procedure'\nORDER BY 1 DESC",
+          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'unitProcedure'\nORDER BY 1 DESC",
           "refId": "A",
           "select": [
             [
@@ -1113,7 +1113,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation'\nORDER BY 1 DESC",
+          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtypename ='operation'\nORDER BY 1 DESC",
           "refId": "A",
           "select": [
             [
@@ -1185,7 +1185,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase'\nORDER BY 1 DESC",
+          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"Caller\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase'\nORDER BY 1 DESC",
           "refId": "A",
           "select": [
             [
@@ -1277,7 +1277,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Procedure' AND commandkey = 'Apple juice procedure'\norder by statechangetime DESC\n",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'procedure' AND commandkey = 'Apple juice procedure'\norder by statechangetime DESC\n",
           "refId": "B",
           "select": [
             [
@@ -1394,7 +1394,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Unit Procedure' AND commandkey = 'Apple_Juice_mixing_unit_procedure'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'unitProcedure' AND commandkey = 'Apple_Juice_mixing_unit_procedure'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -1484,7 +1484,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Unit Procedure' AND commandkey = 'Vitamine_C_addition_unit_procedure'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'unitProcedure' AND commandkey = 'Vitamine_C_addition_unit_procedure'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -1574,7 +1574,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Apple_juice_feed_operation'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'operation' AND commandkey = 'Apple_juice_feed_operation'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -1664,7 +1664,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Apple_juice_transfer_operation'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'operation' AND commandkey = 'Apple_juice_transfer_operation'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -1754,7 +1754,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Apple_juice_cooling_operation'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'operation' AND commandkey = 'Apple_juice_cooling_operation'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -1844,7 +1844,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Mixed_apple_juice_transfer_operation'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'operation' AND commandkey = 'Mixed_apple_juice_transfer_operation'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -1934,7 +1934,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Mixed_apple_juice_cooling_operation'\norder by time_index DESC LIMIT 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'operation' AND commandkey = 'Mixed_apple_juice_cooling_operation'\norder by time_index DESC LIMIT 1",
           "refId": "A",
           "select": [
             [
@@ -2024,7 +2024,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Operation' AND commandkey = 'Vitamine_C_addition_operation'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'operation' AND commandkey = 'Vitamine_C_addition_operation'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2114,7 +2114,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Feed_apple_juice_phase'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Feed_apple_juice_phase'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2204,7 +2204,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'transfer_apple_juice_phase'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'transfer_apple_juice_phase'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2295,7 +2295,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Cool_apple_juice_phase'\norder by time_index DESC limit 1\n",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Cool_apple_juice_phase'\norder by time_index DESC limit 1\n",
           "refId": "B",
           "select": [
             [
@@ -2385,7 +2385,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Transfer_mixed_apple_juice_phase'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Transfer_mixed_apple_juice_phase'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2475,7 +2475,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Cool_mixed_apple_juice_phase'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Cool_mixed_apple_juice_phase'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2565,7 +2565,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Agitate_mixed_apple_juice_phase'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Agitate_mixed_apple_juice_phase'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2655,7 +2655,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Feed_sugar_solution_phase'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Feed_sugar_solution_phase'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2745,7 +2745,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Add_vitamine_C_pahse'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Add_vitamine_C_pahse'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2835,7 +2835,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtype = 'Phase' AND commandkey = 'Agitate_apple_juice_phase'\norder by time_index DESC limit 1",
+          "rawSql": "SELECT \n  statechangetime AS time,\n  commandstate AS \"State\"\nFROM etproceduralelementstates\nWHERE elementtypename = 'phase' AND commandkey = 'Agitate_apple_juice_phase'\norder by time_index DESC limit 1",
           "refId": "A",
           "select": [
             [
@@ -2875,7 +2875,7 @@
       "type": "row"
     },
     {
-      "datasource": "mtcommandstateservice",
+      "datasource": "mttelemetry",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2900,10 +2900,35 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Executer"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 214
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 76
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 12,
         "x": 0,
         "y": 81
@@ -2911,7 +2936,13 @@
       "id": 38,
       "options": {
         "frameIndex": 1,
-        "showHeader": true
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Time"
+          }
+        ]
       },
       "pluginVersion": "8.2.2",
       "targets": [
@@ -2920,7 +2951,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM etcommandstates\nORDER BY 1 DESC",
+          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM ettelemetryvalues\nWHERE elementtypename = 'command' AND commandstate IS NOT NULL\nORDER BY 1 DESC",
           "refId": "A",
           "select": [
             [
@@ -2947,7 +2978,7 @@
       "type": "table"
     },
     {
-      "datasource": "mtcommandstateservice",
+      "datasource": "mttelemetry",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3002,7 +3033,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 89
+        "y": 87
       },
       "id": 40,
       "options": {
@@ -3021,7 +3052,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM etcommandstates\nWHERE result <> 0 AND result <> 2147483647\nORDER BY 1 DESC",
+          "rawSql": "SELECT\n  time_index AS \"time\",\n  caller AS \"caller\",\n  executer AS \"Executer\",\n  commandkey AS \"Command\",\n  commandstate AS \"State\",\n  CAST(result AS STRING) AS \"Result\",\n  CAST(duration AS STRING) AS \"Duration\"\nFROM ettelemetryvalues\nWHERE result <> 0 AND result <> 2147483647\nORDER BY 1 DESC",
           "refId": "A",
           "select": [
             [
@@ -3053,7 +3084,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 97
+        "y": 95
       },
       "id": 30,
       "panels": [],
@@ -3117,7 +3148,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 98
+        "y": 96
       },
       "id": 32,
       "options": {
@@ -3221,7 +3252,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 106
+        "y": 104
       },
       "id": 34,
       "options": {
@@ -3303,7 +3334,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 114
+        "y": 112
       },
       "id": 44,
       "panels": [],
@@ -3311,7 +3342,7 @@
       "type": "row"
     },
     {
-      "datasource": "mteventservice",
+      "datasource": "mttelemetry",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3342,7 +3373,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 115
+        "y": 113
       },
       "id": 2,
       "options": {
@@ -3355,7 +3386,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  lastchangetime AS \"time\",\n  uid AS \"UID\",\n  description AS \"Description\"\nFROM eteventsvalues\nORDER BY lastchangetime desc",
+          "rawSql": "SELECT \n  lastchangetime AS \"time\",\n  uid AS \"UID\",\n  description AS \"Description\"\nFROM ettelemetryvalues\nORDER BY lastchangetime desc",
           "refId": "A",
           "select": [
             [
@@ -3396,5 +3427,5 @@
   "timezone": "",
   "title": "Apple Juice Factory",
   "uid": "zjohwi5nk",
-  "version": 44
+  "version": 5
 }
