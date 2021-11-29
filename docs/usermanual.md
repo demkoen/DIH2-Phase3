@@ -51,13 +51,13 @@ To check the devices that are registerd in the IoT agent you need to know the re
 
 ![check registered devices](images/reqbin_com_curl.png)
 
-example code:
+example code: Getting all physical elements in the S88 Tree
 
 ```curl
 curl -X GET \
 'http://192.168.178.101:4041/iot/devices' \
--H 'fiware-service: packmlService' \
--H 'fiware-servicepath: /packmlStates'
+-H 'fiware-service: PhysicialElementService' \
+-H 'fiware-servicepath: /PhysicalElementsStates'
 ```
 
 Please refer to the [Fiware IoT Agent documentation](https://github.com/FIWARE/tutorials.IoT-Agent) for other commands
